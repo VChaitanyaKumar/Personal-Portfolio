@@ -1,7 +1,7 @@
 
 ## 🚀 Live Demo
 
-🔗 [View Portfolio Live]
+🔗 [View Portfolio Live] (https://personal-portfolio-eight-rho-10.vercel.app/)
 
 ## 🛠️ Tech Stack
 
@@ -52,5 +52,5 @@ Watch the full build on YouTube:
 
 ## 🌟 Credits
 
-This project was created with ❤️ by [Gnana Dileep]
+This project was created with ❤️ by [Gnana Dileep] (https://personal-portfolio-eight-rho-10.vercel.app/)
 If you like it, feel free to ⭐ this repository and share!
