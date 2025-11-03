@@ -13,7 +13,7 @@ const About = () => {
         <div className="w-full md:w-1/2 text-center md:text-left mt-8 md:mt-0">
           {/* Greeting and Name */}
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 leading-tight">
-            Hi, <span className="whitespace-nowrap">Dileep Reddy</span>
+            Hi, <span className="whitespace-nowrap">V Chaitanya Kumar</span>
           </h1>
           {/* Skills Heading with Typing Effect */}
           <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4 text-[#8245ec] leading-tight">
