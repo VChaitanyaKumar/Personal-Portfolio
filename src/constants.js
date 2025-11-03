@@ -1,37 +1,21 @@
 // Skills Section Logo's
 import htmlLogo from './assets/tech_logo/html.png';
 import cssLogo from './assets/tech_logo/css.png';
-import sassLogo from './assets/tech_logo/sass.png';
 import javascriptLogo from './assets/tech_logo/javascript.png';
 import reactjsLogo from './assets/tech_logo/reactjs.png';
 import angularLogo from './assets/tech_logo/angular.png';
-import reduxLogo from './assets/tech_logo/redux.png';
-import nextjsLogo from './assets/tech_logo/nextjs.png';
 import tailwindcssLogo from './assets/tech_logo/tailwindcss.png';
-import gsapLogo from './assets/tech_logo/gsap.png';
-import materialuiLogo from './assets/tech_logo/materialui.png';
 import bootstrapLogo from './assets/tech_logo/bootstrap.png';
-import springbootLogo from './assets/tech_logo/springboot.png';
 import nodejsLogo from './assets/tech_logo/nodejs.png';
 import expressjsLogo from './assets/tech_logo/express.png';
 import mysqlLogo from './assets/tech_logo/mysql.png';
 import mongodbLogo from './assets/tech_logo/mongodb.png';
-import firebaseLogo from './assets/tech_logo/firebase.png';
 import cLogo from './assets/tech_logo/c.png';
-import cppLogo from './assets/tech_logo/cpp.png';
 import javaLogo from './assets/tech_logo/java.png';
 import pythonLogo from './assets/tech_logo/python.png';
-import typescriptLogo from './assets/tech_logo/typescript.png';
 import gitLogo from './assets/tech_logo/git.png';
 import githubLogo from './assets/tech_logo/github.png';
 import vscodeLogo from './assets/tech_logo/vscode.png';
-import postmanLogo from './assets/tech_logo/postman.png';
-import mcLogo from './assets/tech_logo/mc.png';
-import figmaLogo from './assets/tech_logo/figma.png';
-import netlifyLogo from './assets/tech_logo/netlify.png';
-import vercelLogo from './assets/tech_logo/vercel.png';
-import postgreLogo from './assets/tech_logo/postgre.png';
-import csharpLogo from './assets/tech_logo/csharp.png';
 
 // Experience Section Logo's
 import webverseLogo from './assets/company_logo/webverse_logo.png';
@@ -47,243 +31,226 @@ import vpsLogo from './assets/education_logo/vps_logo.png';
 import githubdetLogo from './assets/work_logo/github_det.png';
 import csprepLogo from './assets/work_logo/cs_prep.png';
 import movierecLogo from './assets/work_logo/movie_rec.png';
-import taskremLogo from './assets/work_logo/task_rem.png';
-import npmLogo from './assets/work_logo/npm.png';
-import webverLogo from './assets/work_logo/web_dig.png';
-import cmLogo from './assets/work_logo/cm.png';
-import imagesearchLogo from './assets/work_logo/image_search.png';
-import removebgLogo from './assets/work_logo/remove_bg.png';
 
 
 export const SkillsInfo = [
   {
-    title: 'Frontend',
+    title: 'Technical Skills',
+    skills: [
+      { name: 'Java', logo: javaLogo },
+      { name: 'Python', logo: pythonLogo },
+      { name: 'C', logo: cLogo },
+    ],
+  },
+  {
+    title: 'Web Development',
     skills: [
       { name: 'HTML', logo: htmlLogo },
       { name: 'CSS', logo: cssLogo },
-      { name: 'SASS', logo: sassLogo },
+      { name: 'Tailwind CSS', logo: tailwindcssLogo },
+      { name: 'Bootstrap', logo: bootstrapLogo },
       { name: 'JavaScript', logo: javascriptLogo },
       { name: 'React JS', logo: reactjsLogo },
       { name: 'Angular', logo: angularLogo },
-      { name: 'Redux', logo: reduxLogo },
-      { name: 'Next JS', logo: nextjsLogo },
-      { name: 'Tailwind CSS', logo: tailwindcssLogo },
-      { name: 'GSAP', logo: gsapLogo },
-      { name: 'Material UI', logo: materialuiLogo },
-      { name: 'Bootstrap', logo: bootstrapLogo },
-    ],
-  },
-  {
-    title: 'Backend',
-    skills: [
-      { name: 'Springboot', logo: springbootLogo },
       { name: 'Node JS', logo: nodejsLogo },
       { name: 'Express JS', logo: expressjsLogo },
+    ],
+  },
+  {
+    title: 'Database & Tools',
+    skills: [
       { name: 'MySQL', logo: mysqlLogo },
       { name: 'MongoDB', logo: mongodbLogo },
-      { name: 'Firebase', logo: firebaseLogo },
-      { name: 'PostgreSQL', logo: postgreLogo },
-    ],
-  },
-  {
-    title: 'Languages',
-    skills: [
-      { name: 'C', logo: cLogo },
-      { name: 'C++', logo: cppLogo },
-      { name: 'Java', logo: javaLogo },
-      { name: 'Python', logo: pythonLogo },
-      { name: 'C-Sharp', logo: csharpLogo },
-      { name: 'JavaScript', logo: javascriptLogo },
-      { name: 'TypeScript', logo: typescriptLogo },
-    ],
-  },
-  {
-    title: 'Tools',
-    skills: [
       { name: 'Git', logo: gitLogo },
       { name: 'GitHub', logo: githubLogo },
       { name: 'VS Code', logo: vscodeLogo },
-      { name: 'Postman', logo: postmanLogo },
-      { name: 'Compass', logo: mcLogo },
-      { name: 'Vercel', logo: vercelLogo },
-      { name: 'Netlify', logo: netlifyLogo },
-      { name: 'Figma', logo: figmaLogo },
     ],
   },
+
 ];
 
   export const experiences = [
     {
       id: 0,
       img: webverseLogo,
-      role: "Web Developer",
-      company: "Lumbini Technologies Pvt. Ltd",
-      date: "OCT 2024 - Nov 2024",
-      desc: "Gained hands-on experience in front-end web development using HTML, CSS, Bootstrap, and JavaScript, contributing to live projects by designing responsive user interfaces and enhancing user experience, and consistently meeting project deadlines with high-quality code and proper documentation.",
+      role: "Web Development Intern",
+      company: "Lumbini Technologies Pvt Ltd – Remote",
+      date: "Oct 2024 - Nov 2024",
+      desc: [
+        "Developed and deployed the official company website using HTML, CSS, Bootstrap, and JavaScript, ensuring a responsive and user-friendly design across devices",
+        "Collaborated with cross-functional team to align the website's UI with branding guidelines and business objectives",
+        "Enhanced website performance and navigation structure, resulting in a smooth user experience and improved accessibility"
+      ],
       skills: [
         "HTML",
         "CSS",
         "JavaScript",
         "Bootstrap",
-        "SQL",
-        
       ],
     },
     {
       id: 1,
       img: agcLogo,
-      role: "AI Intern",
-      company: "TechSaksham (Microsoft & SAP | Edunet Foundation)",
-      date: "Jan 2025 - Feb 2025",
-      desc: "Worked on developing an AI model for medical diagnosis, leveraging data-driven insights to identify disease patterns and support clinical decision-making.Collaborated with mentors from Edunet Foundation to implement real-world applications of artificial intelligence in the healthcare domain.",
+      role: "Artificial Intelligence Intern",
+      company: "UptoSkills– Remote",
+      date: "Jan 2025 - Apr 2025",
+      desc: [
+        "Developed an AI-driven personalized learning platform that uses NLP for interactive tutoring, along with adaptive video lectures, notes, and quizzes tailored to student needs",
+        "Implemented an AI chatbot with speech Recognition, enabling voice-based interactions and enhancing the learning experience",
+        "Incorporated progress tracking and AI-generated certificates, providing a structured learning path and personalized achievements for users"
+      ],
       skills: [
         "Python",
-        "Streamlit",
+        "NLP",
+        "AI",
+        "Machine Learning",
       ],
     },
     {
       id: 2,
       img: newtonschoolLogo,
-      role: "MERN Stack Intern",
-      company: "EY Global Delivery Services & AICTE (Edunet Foundation)",
-      date: "Feb 2025 – Mar 2025",
-      desc: "Completed a 6-week internship focused on building modern web applications using the MERN Stack (MongoDB, Express.js, React.js, Node.js).Developed full-stack web solutions and gained practical exposure to frontend–backend integration and API development.",
+      role: "Web and App Developer Intern",
+      company: "WhiteCloudsMedia Pvt Ltd – Onsite",
+      date: "Jun 2025",
+      desc: [
+        "Developed a cross-platform School Management App using React Native (Expo) and TypeScript, integrated with Supabase (PostgreSQL) for real-time data synchronization",
+        "Implemented role-based access control for Admin, Teachers, and Students with full CRUD operations, attendance management, and secure authentication",
+        "Designed and built app modules including Home, Timetable, Tasks, Notes, Exams, Events, and Student Directory with responsive UI styling using Git & GitHub for version control and Tailwind CSS"
+      ],
       skills: [
-        "ReactJS",
-        "NodeJS",
-        "MongoDB", "Tailwind CSS"
+        "React Native",
+        "TypeScript",
+        "PostgreSQL",
+        "Supabase",
+        "Tailwind CSS"
       ],
     },
   ];
   
   export const education = [
-    // {
-    //   id: 0,
-    //   img: glaLogo,
-    //   school: "GLA University, Mathura",
-    //   date: "Sept 2022 - July 2024",
-    //   grade: "7.81 CGPA",
-    //   desc: "I have completed my Master's degree (MCA) in Computer Applications from GLA University, Mathura. During my time at GLA, I gained a strong foundation in programming, software development, and computer science principles. I have studied courses such as Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Web Development, and Software Engineering. I actively participated in various workshops and technical events, which enhanced my skills and knowledge. My experience at GLA University has been instrumental in shaping my technical abilities and professional growth.",
-    //   degree: "Master of Computer Applications - MCA",
-    // },
+    {
+      id: 0,
+      img: bsaLogo,
+      school: "Jain University, Bangalore, Karnataka",
+      date: "2022 - 2026",
+      grade: "90%",
+      desc: "I am currently pursuing my Bachelor of Technology (B.Tech) in Computer Science and Engineering (CSE), where I am developing a strong foundation in both theoretical and practical aspects of computing. My coursework covers key areas such as Data Structures and Algorithms, Operating Systems, Database Management Systems, Computer Networks, Artificial Intelligence, and Web Development.",
+      degree: "B.Tech – Computer Science and Engineering",
+    },
     {
       id: 1,
-      img: bsaLogo,
-      school: "Jain University, Bengaluru",
-      date: "Sept 2022 - Present",
-      grade: "85.3%",
-      desc: "I completed my Bachelor of Technology (B.Tech) in Computer Science and Engineering (CSE), where I developed a strong foundation in both theoretical and practical aspects of computing. My coursework covered key areas such as Data Structures and Algorithms, Operating Systems, Database Management Systems, Computer Networks, Artificial Intelligence, and Web Development.",
-      degree: "Bachelor of Technology - BTECH (Computer Science)",
+      img: vpsLogo,
+      school: "Narayana Junior College, Nellore, Andhra Pradesh",
+      date: "2021 - 2022",
+      grade: "93.8%",
+      desc: "I completed my Intermediate (MPC) – Higher Secondary Education from Narayana Junior College, Nellore, where I studied Mathematics, Physics, and Chemistry (MPC).",
+      degree: "Intermediate( MPC ) – Higher Secondary Education",
     },
     {
       id: 2,
-      img: vpsLogo,
-      school: "C N Raju Junior College, Rayachoty",
-      date: "Apr 2020 - March 2022",
-      grade: "86.5%",
-      desc: "I completed my class 12 education from C N Raju Junior College, Rayachoty, under the Intermediate board, where I studied Physics, Chemistry, and Mathematics (PCM).",
-      degree: "CBSE(XII) - PCM",
-    },
-    {
-      id: 3,
       img: glaLogo,
-      school: "Govt High School, Rayachoty",
-      date: "Apr 2019 - March 2020",
-      grade: "95.3%",
-      desc: "I completed my class 10 education from Govt High School, Rayachoty, under the SSC board..",
-      degree: "CBSE(X)",
+      school: "Narayana High School, Nellore, Andhra Pradesh",
+      date: "2019 - 2020",
+      grade: "98.5%",
+      desc: "I completed my 10th Standard – Secondary Education from Narayana High School, Nellore, under the SSC board.",
+      degree: "10th Standard – Secondary Education",
     },
   ];
   
   export const projects = [
     {
       id: 0,
-      title: "SkillSwap - Peer to Peer learning platform",
-      description:
-        "SkillSwap is a MERN stack web platform designed to facilitate collaborative learning and skill development through peer-to-peer guidance. The platform emphasizes reciprocal knowledge exchange, industrial-grade security features, and user-friendly interfaces to create a dynamic learning environment.",
+      title: "PeerUp – University Club Management System",
+      description: [
+        "Developed a university club management full-stack web application featuring Home, Login, Signup, Student Dashboard, Admin Dashboard, Club Listings, Club Profile, Event Listings, Event Details, Join Requests, and Notifications pages to enhance campus engagement",
+        "Designed and implemented key UI components, including login/signup pages, dashboards, club/event listings, and navigation",
+        "Ensured responsiveness and dynamic content rendering using state management and routing",
+        "Structured and developed MongoDB schemas for users, clubs, events, and notifications with optimized queries using Mongoose"
+      ],
       image: githubdetLogo,
-      tags: ["HTML", "CSS", "JavaScript", "React JS", "API", "MongoDB"],
-      github: "https://github.com/VGNANADILEEPREDDY/SkillSwap.git",
-      webapp: "https://skill-swap-q8tq.vercel.app/",
+      tags: ["Angular", "JavaScript", "HTML", "CSS", "MongoDB", "Git"],
+      github: "https://github.com/VChaitanyaKumar/PeerUp_Student_University_Clubs",
+      webapp: "#",
     },
     {
       id: 1,
-      title: "Quiz App",
-      description:
-        "Developed an interactive Quiz Application using HTML, CSS, and JavaScript that allows users to test their knowledge across multiple topics. The app features dynamic question loading, score calculation, and instant feedback after each quiz.",
+      title: "Real-Time Driver Fatigue Detection to Enhance Road Safety",
+      description: [
+        "Developed a real-time drowsiness detection system to classify driver states - awake, drowsy, or sleeping - by analyzing facial landmarks and monitoring eye movement patterns",
+        "Implemented the Eye Aspect Ratio (EAR) algorithm to track blinking frequency and eye closure duration, achieving 91% accuracy across bright, dim, and low-light environments",
+        "Integrated a proactive alert mechanism to notify drivers of fatigue and validated the system on real-time video input",
+        "Authored a research paper presented at AdComSys 2025, an international conference organized by the University of Engineering and Management, Kolkata, in association with Springer"
+      ],
       image: csprepLogo,
-      tags: ["HTML", "CSS", "JavaScript"],
-      github: "https://github.com/VGNANADILEEPREDDY/Quiz-App.git",
-      // webapp: "https://csprep.netlify.app/",
+      tags: ["Python", "OpenCV", "Dlib", "Computer Vision"],
+      github: "https://github.com/VChaitanyaKumar/Real_Time_Driver_Fatigue_Detection_to_Enhance_Road_Safety",
+      webapp: "#",
     },
     {
       id: 2,
-      title: "Crowdfunding",
-      description:
-        "A modern crowdfunding platform that allows individuals and organizations to raise funds for startups, creative projects, social causes, and product pre-orders. Built with React.js, it features user authentication, secure payment integration, and an admin dashboard for campaign monitoring.",
+      title: "Crop And Fertiliser Recommendation System Using ML",
+      description: [
+        "Built a smart agricultural assistant using machine learning to recommend the best crop and fertilizer based on environmental and soil conditions",
+        "Utilized publicly available Kaggle datasets covering features such as NPK values, pH, humidity, temperature, moisture, and rainfall",
+        "Achieved 98.48% accuracy in crop prediction using a Decision Tree Classifier and 100% accuracy in fertilizer recommendation via rule-based logic",
+        "Applied data preprocessing, EDA, and visualization (Matplotlib, Seaborn) for insights and model optimization with clean notebook-based user interface"
+      ],
       image: movierecLogo,
-      tags: ["React JS", "NodeJS", "MogoDB"],
-      github: "https://github.com/VGNANADILEEPREDDY/Crowdfunding.git",
-      // webapp: "https://movie-recommendation-app-jet.vercel.app/",
+      tags: ["Python", "Machine Learning", "Decision Tree", "Matplotlib", "Seaborn"],
+      github: "https://github.com/VChaitanyaKumar/Crop_And_Fertiliser_Recommendation_System_Using_ML",
+      webapp: "#",
     },
     {
       id: 3,
-      title: "Implementation-of-AI-Powered-Medical-Diagnosis-System",
-      description:
-        "An AI-driven diagnosis system using Python and Streamlit, leveraging ML & deep learning for disease prediction. It processes medical data, analyzes images, and extracts insights using NLP. With a user-friendly UI and compliance with security standards, it enhances diagnostic accuracy and patient care..",
-      image: npmLogo,
-      tags: ["Python", "Jupyter"],
-      github: "https://github.com/VGNANADILEEPREDDY/Implementation-of-AI-Powered-Medical-Diagnosis-System.git",
-      // webapp: "https://www.npmjs.com/package/cmtk-email-validator",
+      title: "Cluster Based False Aggregate Detection System (CBFADS) in WSN",
+      description: [
+        "Implemented a hierarchical Wireless Sensor Network (WSN) model with energy-based dynamic cluster head selection and data aggregation to optimize network performance",
+        "Developed an Intrusion Detection System (IDS) at the base station to detect and isolate false data aggregates, improving accuracy and reliability",
+        "Evaluated system performance in NS2 based on Throughput, Delay, Accuracy, and Energy Efficiency",
+        "Achieved superior results compared to LEACH, HEED, PEGASIS, and TEEN protocols"
+      ],
+      image: githubdetLogo,
+      tags: ["NS2", "TCL", "Shell Scripting", "WSN", "Network Security"],
+      github: "https://github.com/VChaitanyaKumar/Cluster-Based-False-Aggregate-Detection-System-in-Wireless-Sensor-Networks-",
+      webapp: "#",
     },
-    // {
-    //   id: 4,
-    //   title: "Task Reminder Chrome Extension Tool",
-    //   description:
-    //     "A productivity-boosting Chrome extension designed to help users manage and remember their daily tasks. Built using JavaScript, it offers a simple interface with reminders and task notifications to keep users on track.",
-    //   image: taskremLogo,
-    //   tags: ["JavaScript", "Chrome Extension", "HTML", "CSS"],
-    //   github: "https://github.com/codingmastr/Task-Reminder-Tool",
-    //   webapp: "chrome://extensions/?id=kngheeibjnnidhfoomkpnbeghackheci",
-    // },
-    // {
-    //   id: 5,
-    //   title: "Webverse Digital",
-    //   description:
-    //     "The official website for Webverse Digital, a creative digital marketing agency. Built using HTML, CSS, and JavaScript, it features visually appealing animations and a clean design to showcase the agency's services.",
-    //   image: webverLogo,
-    //   tags: ["HTML", "CSS", "JavaScript", "Framer Motion"],
-    //   github: "https://github.com/codingmastr/Webverse-Digital",
-    //   webapp: "https://webversedigital.com/",
-    // },
-    // {
-    //   id: 6,
-    //   title: "Coding Master",
-    //   description:
-    //     "An ed-tech platform where users can access tech and coding-related blogs, notes, interview questions, e-books, and premium content with payment integration. Built with full-stack technologies for a seamless learning experience.",
-    //   image: cmLogo,
-    //   tags: ["React JS", "Node.js", "MongoDB", "Express", "Payment Integration"],
-    //   github: "https://codingmasterweb.in/",
-    //   webapp: "https://codingmasterweb.in/",
-    // },
-    // {
-    //   id: 7,
-    //   title: "Image Search App",
-    //   description:
-    //     "A React.js-based image search application that allows users to search and download high-quality images from the web. Built using external APIs to ensure a vast library of results for various queries.",
-    //   image: imagesearchLogo,
-    //   tags: ["React JS", "API", "Search Feature", "CSS", "Javascript"],
-    //   github: "https://github.com/codingmastr/Image-Search-App",
-    //   webapp: "https://imagsearch.netlify.app/",
-    // },
-    // {
-    //   id: 8,
-    //   title: "Image Background Remover",
-    //   description:
-    //     "An efficient background removal app built with React.js and API integration. Users can upload any image, remove the background, and download the transparent version for further use.",
-    //   image: removebgLogo,
-    //   tags: ["React JS", "API", "Image Processing", "HTML", "CSS", "Javascript"],
-    //   github: "https://github.com/codingmastr/Image-Background-Remover",
-    //   webapp: "https://removeyourbg.netlify.app/",
-    // },
+    {
+      id: 4,
+      title: "Ocular Disease Recognition Using Deep Learning",
+      description: [
+        "Implemented transfer learning using the InceptionV3 model to classify retina images into multiple eye disease categories such as Cataract, Glaucoma, and Normal",
+        "Performed data preprocessing and augmentation to enhance model generalization and prevent overfitting on the medical image dataset",
+        "Achieved ~95% classification accuracy, demonstrating effective detection of eye diseases through deep learning techniques"
+      ],
+      image: csprepLogo,
+      tags: ["Python", "TensorFlow", "Keras", "OpenCV", "InceptionV3"],
+      github: "https://github.com/VChaitanyaKumar/Ocular_Disease_Recoginition_Using_DeepLearning",
+      webapp: "#",
+    },
+    {
+      id: 5,
+      title: "Intrusion Detection using Multi-Classification Techniques",
+      description: [
+        "Implemented and compared multiple machine learning classifiers (Decision Tree, Random Forest, XGBoost, LightGBM, SVM, etc.) to detect network intrusions using the Kyoto_2015_May_day14 dataset",
+        "Performed data preprocessing including handling missing values, label encoding, and feature standardization to enhance model performance and accuracy",
+        "Achieved up to 100% accuracy across top-performing models and conducted detailed comparative analysis using confusion matrices and classification reports"
+      ],
+      image: movierecLogo,
+      tags: ["Python", "XGBoost", "LightGBM", "Scikit-learn", "Network Security"],
+      github: "https://github.com/VChaitanyaKumar/Kyoto2015_May14_MultiClassifier_ID_Using_MLS",
+      webapp: "#",
+    },
+    {
+      id: 6,
+      title: "Forest Fire Detection using Deep Learning",
+      description: [
+        "Built and trained a Convolutional Neural Network to classify images into 'fire' and 'no fire' classes using image preprocessing, augmentation (ImageDataGenerator), and binary cross-entropy loss with the Adam optimizer",
+        "Collected a wildfire dataset (Kaggle), resized images to 150×150, normalized pixels, created train/validation/test splits, and trained the model while monitoring accuracy and loss curves",
+        "Evaluated model performance using accuracy and loss plots, confusion matrix and sample predictions with extensions for real-time deployment"
+      ],
+      image: githubdetLogo,
+      tags: ["Python", "TensorFlow", "Keras", "CNN", "Image Classification"],
+      github: "https://github.com/VChaitanyaKumar/Forest_Fire_Detection_Using_Deep_Learning",
+      webapp: "#",
+    },
   ];  

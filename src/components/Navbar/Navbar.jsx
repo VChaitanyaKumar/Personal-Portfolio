@@ -46,10 +46,8 @@ const Navbar = () => {
         {/* Logo */}
         <div className="text-lg font-semibold cursor-pointer">
           <span className="text-[#8245ec]">&lt;</span>
-          <span className="text-white">Gnana</span>
-          <span className="text-[#8245ec]">/</span>
-          <span className="text-white">Dileep</span>
-          <span className="text-[#8245ec]">&gt;</span>
+          <span className="text-white">Portfolio</span>
+          <span className="text-[#8245ec]">/&gt;</span>
         </div>
 
         {/* Desktop Menu */}
@@ -71,7 +69,7 @@ const Navbar = () => {
         {/* Social Icons */}
         <div className="hidden md:flex space-x-4">
           <a
-            href="https://github.com/VGNANADILEEPREDDY"
+            href="https://github.com/VChaitanyaKumar"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-[#8245ec]"
@@ -79,7 +77,7 @@ const Navbar = () => {
             <FaGithub size={24} />
           </a>
           <a
-            href="https://www.linkedin.com/in/gnana-dileep-reddy-v-a67790254?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2F6vSyYEQSX6YidNg6zXiPw%3D%3D"
+            href="https://www.linkedin.com/in/v-chaitanya-kumar"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-[#8245ec]"
@@ -122,7 +120,7 @@ const Navbar = () => {
             ))}
             <div className="flex space-x-4">
               <a
-                href="https://github.com/codingmastr"
+                href="https://github.com/VChaitanyaKumar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white"
@@ -130,7 +128,7 @@ const Navbar = () => {
                 <FaGithub size={24} />
               </a>
               <a
-                href="https://www.linkedin.com/in/gnana-dileep-reddy-v-a67790254?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2F6vSyYEQSX6YidNg6zXiPw%3D%3D"
+                href="https://www.linkedin.com/in/v-chaitanya-kumar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white"
