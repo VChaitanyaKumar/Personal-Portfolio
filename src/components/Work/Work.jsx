@@ -23,8 +23,9 @@ const Work = () => {
   return (
     <section
       id="work"
-      className="py-12 sm:py-16 md:py-20 lg:py-24 pb-12 sm:pb-16 md:pb-20 lg:pb-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 font-sans relative"
+      className="py-12 sm:py-16 md:py-20 lg:py-24 pb-12 sm:pb-16 md:pb-20 lg:pb-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 font-sans relative bg-skills-gradient clip-path-custom"
     >
+
       {/* Section Title */}
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-white">PROJECTS</h2>
@@ -36,34 +37,39 @@ const Work = () => {
       </div>
 
       {/* Projects Grid */}
-      <div className="grid gap-8 grid-cols-1 lg:grid-cols-2">
-        {projects.map((project) => (
+      <div className="relative grid gap-8 grid-cols-1 lg:grid-cols-2 max-w-7xl mx-auto">
+        {projects.map((project, index) => (
           <div
             key={project.id}
-            className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-300 border border-gray-700"
+            className="group relative bg-gradient-to-br from-gray-800/50 via-gray-900/80 to-black/90 backdrop-blur-sm rounded-3xl overflow-hidden hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 border border-gray-700/50 cursor-pointer"
+            onClick={() => handleOpenModal(project)}
+            style={{
+              animationDelay: `${index * 0.1}s`,
+            }}
           >
-            {/* Project Image */}
-            <div 
-              className="relative overflow-hidden cursor-pointer"
-              onClick={() => handleOpenModal(project)}
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-            </div>
+            {/* Gradient Border Effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-green-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
             
+            {/* Card Number */}
+            <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
+              {String(index + 1).padStart(2, '0')}
+            </div>
+
             {/* Project Content */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-3 line-clamp-2">
-                {project.title}
-              </h3>
-              <ul className="text-gray-400 text-sm mb-4 space-y-2">
+            <div className="p-8">
+              {/* Project Title */}
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-2 leading-tight">
+                  {project.title}
+                </h3>
+                <div className="w-12 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-20 transition-all duration-300"></div>
+              </div>
+
+              {/* Project Description */}
+              <ul className="text-gray-300 text-sm mb-6 space-y-3">
                 {(expandedCards[project.id] ? project.description : project.description.slice(0, 2)).map((point, index) => (
                   <li key={index} className="flex items-start text-justify">
-                    <span className="text-purple-400 mr-2 mt-0.5 text-xs">•</span>
+                    <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-3 mt-2 flex-shrink-0"></div>
                     <span className="leading-relaxed">{point}</span>
                   </li>
                 ))}
@@ -76,115 +82,157 @@ const Work = () => {
                     e.stopPropagation();
                     toggleExpanded(project.id);
                   }}
-                  className="text-purple-400 hover:text-purple-300 text-xs font-medium mb-4 transition-colors duration-200"
+                  className="text-purple-400 hover:text-purple-300 text-sm font-medium mb-6 transition-colors duration-200 flex items-center gap-2"
                 >
-                  {expandedCards[project.id] ? 'Read Less' : `+${project.description.length - 2} more points...`}
+                  {expandedCards[project.id] ? (
+                    <>
+                      <span>Show Less</span>
+                      <svg className="w-4 h-4 transform rotate-180" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </>
+                  ) : (
+                    <>
+                      <span>+{project.description.length - 2} more details</span>
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </>
+                  )}
                 </button>
               )}
               
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.slice(0, 3).map((tag, index) => (
-                  <span
-                    key={index}
-                    className="bg-purple-600/20 text-purple-300 text-xs font-medium px-3 py-1 rounded-full border border-purple-500/30"
-                  >
-                    {tag}
-                  </span>
-                ))}
-                {project.tags.length > 3 && (
-                  <span className="text-purple-300 text-xs font-medium px-3 py-1">
-                    +{project.tags.length - 3} more
-                  </span>
-                )}
+              {/* Technology Tags */}
+              <div className="mb-6">
+                <h4 className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-3">Technologies</h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.slice(0, 4).map((tag, index) => (
+                    <span
+                      key={index}
+                      className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-purple-300 text-xs font-medium px-3 py-2 rounded-full border border-purple-500/30 backdrop-blur-sm hover:from-purple-600/30 hover:to-blue-600/30 transition-all duration-200"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                  {project.tags.length > 4 && (
+                    <span className="text-purple-300 text-xs font-medium px-3 py-2 bg-gray-700/50 rounded-full">
+                      +{project.tags.length - 4}
+                    </span>
+                  )}
+                </div>
               </div>
               
               {/* Action Button */}
-              <div className="mt-4">
+              <div className="flex gap-3">
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className="w-full bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold py-2 px-4 rounded-lg transition-colors duration-200 text-center block"
+                  className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white text-sm font-semibold py-3 px-4 rounded-xl transition-all duration-300 text-center group-hover:shadow-lg group-hover:shadow-purple-500/25 flex items-center justify-center gap-2"
                 >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
                   View Code
                 </a>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleOpenModal(project);
+                  }}
+                  className="px-4 py-3 bg-gray-700/50 hover:bg-gray-600/50 text-gray-300 hover:text-white rounded-xl transition-all duration-300 flex items-center justify-center"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Modal Container */}
+      {/* Enhanced Modal Container */}
       {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-          <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl lg:w-full w-[95%] max-w-4xl overflow-hidden relative border border-gray-700">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4">
+          <div className="bg-gradient-to-br from-gray-800/95 via-gray-900/95 to-black/95 backdrop-blur-xl rounded-3xl shadow-2xl lg:w-full w-[95%] max-w-5xl overflow-hidden relative border border-gray-600/50">
+            {/* Gradient Border Effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-green-500/20 rounded-3xl -z-10"></div>
+            
             {/* Close Button */}
             <div className="flex justify-end p-6">
               <button
                 onClick={handleCloseModal}
-                className="text-gray-400 hover:text-white text-2xl font-bold transition-colors duration-200 bg-gray-700 hover:bg-gray-600 w-10 h-10 rounded-full flex items-center justify-center"
+                className="text-gray-400 hover:text-white transition-all duration-200 bg-gray-700/50 hover:bg-gray-600/50 w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-sm border border-gray-600/30"
               >
-                ×
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
               </button>
             </div>
 
-            <div className="flex flex-col lg:flex-row">
-              {/* Project Image */}
-              <div className="lg:w-1/2 w-full flex justify-center bg-gray-800/50 p-6">
-                <img
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  className="w-full max-w-md object-contain rounded-lg shadow-xl"
-                />
-              </div>
-              
-              {/* Project Details */}
-              <div className="lg:w-1/2 w-full p-8">
-                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+            <div className="px-8 pb-8">
+              {/* Project Header */}
+              <div className="mb-8">
+                <h3 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent mb-4">
                   {selectedProject.title}
                 </h3>
-                <ul className="text-gray-300 mb-6 space-y-3">
+                <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mb-6"></div>
+              </div>
+
+              {/* Project Details */}
+              <div className="mb-8">
+                <h4 className="text-gray-400 text-sm font-semibold uppercase tracking-wider mb-4">Project Overview</h4>
+                <ul className="text-gray-300 space-y-4">
                   {selectedProject.description.map((point, index) => (
                     <li key={index} className="flex items-start text-justify">
-                      <span className="text-purple-400 mr-3 mt-1">•</span>
-                      <span className="leading-relaxed">{point}</span>
+                      <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                      <span className="leading-relaxed text-base">{point}</span>
                     </li>
                   ))}
                 </ul>
-                
-                {/* All Tags */}
-                <div className="flex flex-wrap gap-2 mb-8">
+              </div>
+              
+              {/* Technology Stack */}
+              <div className="mb-8">
+                <h4 className="text-gray-400 text-sm font-semibold uppercase tracking-wider mb-4">Technology Stack</h4>
+                <div className="flex flex-wrap gap-3">
                   {selectedProject.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="bg-purple-600/20 text-purple-300 text-sm font-medium px-3 py-2 rounded-full border border-purple-500/30"
+                      className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-purple-300 text-sm font-medium px-4 py-2 rounded-full border border-purple-500/30 backdrop-blur-sm hover:from-purple-600/30 hover:to-blue-600/30 transition-all duration-200"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                
-                {/* Action Buttons */}
-                <div className="flex gap-4">
-                  <a
-                    href={selectedProject.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold text-center transition-colors duration-200"
-                  >
-                    View Code
-                  </a>
-                  <a
-                    href={selectedProject.webapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold text-center transition-colors duration-200"
-                  >
-                    Live Demo
-                  </a>
-                </div>
+              </div>
+              
+              {/* Action Buttons */}
+              <div className="flex gap-4">
+                <a
+                  href={selectedProject.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white px-6 py-4 rounded-xl font-semibold text-center transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                  View Source Code
+                </a>
+                <a
+                  href={selectedProject.webapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-4 rounded-xl font-semibold text-center transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl hover:shadow-purple-500/25"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                  Live Demo
+                </a>
               </div>
             </div>
           </div>

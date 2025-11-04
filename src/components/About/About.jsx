@@ -8,9 +8,29 @@ const About = () => {
       id="about"
       className="py-4 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 font-sans mt-12 sm:mt-16 md:mt-24 lg:mt-32"
     >
-      <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-8 md:gap-12">
-        {/* Left Side */}
-        <div className="w-full md:w-1/2 text-center md:text-left mt-8 md:mt-0">
+      <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+        {/* Profile Photo - Centered at Top */}
+        <div className="mb-8 md:mb-12">
+          <Tilt
+            className="w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 border-4 border-purple-700 rounded-full"
+            style={{ backgroundColor: "#ffffff" }}
+            tiltMaxAngleX={20}
+            tiltMaxAngleY={20}
+            perspective={1000}
+            scale={1.05}
+            transitionSpeed={1000}
+            gyroscope={true}
+          >
+            <img
+              src={profileImage}
+              alt="V Chaitanya Kumar"
+              className="w-full h-full object-contain rounded-full drop-shadow-[0_10px_20px_rgba(130,69,236,0.5)]"
+            />
+          </Tilt>
+        </div>
+
+        {/* Content - Centered Below Photo */}
+        <div className="w-full text-center">
           {/* Greeting and Name */}
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 leading-tight">
             Hi, <span className="whitespace-nowrap">V Chaitanya Kumar</span>
@@ -19,7 +39,11 @@ const About = () => {
           <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4 text-[#8245ec] leading-tight">
             <span className="text-white">I am a </span>
             <ReactTypingEffect
-              text={["Software Engineer", "Web Developer", "App Developer"]}
+              text={[
+                "Software Developer",
+                "Full Stack Developer",
+                "App Developer",
+              ]}
               speed={100}
               eraseSpeed={50}
               typingDelay={500}
@@ -30,7 +54,7 @@ const About = () => {
             />
           </h3>
           {/* About Me Paragraph */}
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 mb-6 sm:mb-8 md:mb-10 mt-6 sm:mt-8 leading-relaxed text-justify">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 mb-6 sm:mb-8 md:mb-10 mt-6 sm:mt-8 leading-relaxed text-justify max-w-3xl mx-auto">
             An aspiring software engineer with knowledge in programming and web
             development. Passionate about developing scalable, real-world
             solutions while continuously enhancing technical and problem-solving
@@ -50,25 +74,6 @@ const About = () => {
           >
             DOWNLOAD CV
           </a>
-        </div>
-        {/* Right Side */}
-        <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-          <Tilt
-            className="w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 border-4 border-purple-700 rounded-full"
-            style={{ backgroundColor: "#ffffff" }}
-            tiltMaxAngleX={20}
-            tiltMaxAngleY={20}
-            perspective={1000}
-            scale={1.05}
-            transitionSpeed={1000}
-            gyroscope={true}
-          >
-            <img
-              src={profileImage}
-              alt="V Chaitanya Kumar"
-              className="w-full h-full object-contain rounded-full drop-shadow-[0_10px_20px_rgba(130,69,236,0.5)]"
-            />
-          </Tilt>
         </div>
       </div>
     </section>

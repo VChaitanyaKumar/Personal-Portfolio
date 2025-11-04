@@ -24,11 +24,11 @@ const Experience = () => {
     setCurrentSlide(index);
   };
 
-  // Auto-slide functionality - slides every 2 seconds
+  // Auto-slide functionality - slides every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % experiences.length);
-    }, 2000); // 2 seconds
+    }, 5000); // 5 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -48,7 +48,7 @@ const Experience = () => {
       </div>
 
       {/* Experience Slider Container */}
-      <div className="relative max-w-4xl mx-auto">
+      <div className="relative max-w-5xl mx-auto">
         {/* Slider Wrapper */}
         <div className="overflow-hidden rounded-2xl">
           <div 
@@ -64,18 +64,24 @@ const Experience = () => {
                   {/* Company Logo Header */}
                   <div className="relative bg-gradient-to-r from-purple-600 to-purple-800 p-6 text-center">
                     <div className="flex flex-col items-center space-y-4">
-                      <div className="w-20 h-20 bg-white rounded-lg overflow-hidden shadow-lg">
+                      <div className={`${
+                        experience.company.includes('Lumbini Technologies') 
+                          ? 'w-20 h-20' 
+                          : experience.company.includes('WhiteCloudsMedia')
+                          ? 'w-48 h-20'
+                          : 'w-44 h-20'
+                      } bg-white rounded-lg overflow-hidden shadow-lg`}>
                         <img
                           src={experience.img}
                           alt={experience.company}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain"
                         />
                       </div>
-                      <div>
+                      <div className="w-full max-w-sm">
                         <h3 className="text-xl font-bold text-white mb-2">
                           {experience.role}
                         </h3>
-                        <p className="text-purple-100 text-sm font-medium mb-1">
+                        <p className="text-purple-100 text-base font-medium mb-1 px-2 text-center leading-relaxed">
                           {experience.company}
                         </p>
                         <p className="text-purple-200 text-sm">
@@ -128,10 +134,10 @@ const Experience = () => {
           </div>
         </div>
 
-        {/* Navigation Arrows */}
+        {/* Navigation Arrows - Outside the cards */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 z-10"
+          className="absolute -left-16 top-1/2 transform -translate-y-1/2 bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 z-10"
           aria-label="Previous slide"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -141,7 +147,7 @@ const Experience = () => {
         
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 z-10"
+          className="absolute -right-16 top-1/2 transform -translate-y-1/2 bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 z-10"
           aria-label="Next slide"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
