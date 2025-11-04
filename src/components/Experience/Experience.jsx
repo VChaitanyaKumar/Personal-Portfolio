@@ -41,7 +41,7 @@ const Experience = () => {
       <div className="text-center mb-16">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white">EXPERIENCE</h2>
         <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className="text-gray-400 mt-4 text-lg font-semibold">
+        <p className="text-gray-400 mt-4 text-2xl font-semibold">
           A collection of my work experience and the roles I have taken in
           various organizations
         </p>
@@ -119,15 +119,107 @@ const Experience = () => {
 
               {/* Description Points */}
               <div className="mb-6">
-                <h4 className="text-cyan-300 text-base font-semibold uppercase tracking-wider mb-4">Key Responsibilities</h4>
-                <ul className="text-gray-300 space-y-3">
-                  {(expandedCards[experience.id] ? experience.desc : experience.desc.slice(0, 2)).map((point, index) => (
-                    <li key={index} className="flex items-start text-justify">
-                      <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                      <span className="leading-relaxed text-base">{point}</span>
-                    </li>
-                  ))}
-                </ul>
+                <h4 className="text-cyan-300 text-lg font-semibold uppercase tracking-wider mb-4">Key Responsibilities</h4>
+                <div className="relative">
+                  {/* Timeline Line */}
+                  <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-400 via-purple-500 to-blue-500"></div>
+                  
+                  <div className="space-y-6">
+                    {(expandedCards[experience.id] ? experience.desc : experience.desc.slice(0, 2)).map((point, index) => (
+                      <div key={index} className="relative flex items-start group">
+                        {/* Timeline Node */}
+                        <div className="absolute left-0 w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
+                          <div className="w-3 h-3 bg-white rounded-full"></div>
+                        </div>
+                        
+                        {/* Content */}
+                        <div className="ml-12 flex-1">
+                          <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 backdrop-blur-sm rounded-xl p-5 border-l-4 border-cyan-400 hover:border-purple-400 transition-all duration-300 shadow-lg hover:shadow-cyan-500/20">
+                            <p className="text-gray-300 leading-relaxed text-lg">
+                              {point.includes('React Native') ? (
+                                <>
+                                  Developed a cross-platform{" "}
+                                  <span className="text-blue-400 font-semibold">School Management App</span> using{" "}
+                                  <span className="text-cyan-400 font-semibold">React Native (Expo)</span> and{" "}
+                                  <span className="text-purple-400 font-semibold">TypeScript</span>, integrated with{" "}
+                                  <span className="text-green-400 font-semibold">Supabase (PostgreSQL)</span> for{" "}
+                                  <span className="text-yellow-400 font-semibold">real-time data synchronization</span>
+                                </>
+                              ) : point.includes('role-based') ? (
+                                <>
+                                  Implemented{" "}
+                                  <span className="text-orange-400 font-semibold">role-based access control</span> for{" "}
+                                  <span className="text-pink-400 font-semibold">Admin, Teachers, and Students</span> with{" "}
+                                  <span className="text-cyan-400 font-semibold">full CRUD operations</span>,{" "}
+                                  <span className="text-blue-400 font-semibold">attendance management</span>, and{" "}
+                                  <span className="text-green-400 font-semibold">secure authentication</span>
+                                </>
+                              ) : point.includes('app modules') ? (
+                                <>
+                                  Designed and built app modules including{" "}
+                                  <span className="text-purple-400 font-semibold">Home, Timetable, Tasks, Notes, Exams, Events</span>, and{" "}
+                                  <span className="text-blue-400 font-semibold">Student Directory</span> with{" "}
+                                  <span className="text-cyan-400 font-semibold">responsive UI styling</span> using{" "}
+                                  <span className="text-orange-400 font-semibold">Git & GitHub</span> for version control and{" "}
+                                  <span className="text-green-400 font-semibold">Tailwind CSS</span>
+                                </>
+                              ) : point.includes('AI-driven') ? (
+                                <>
+                                  Developed an{" "}
+                                  <span className="text-purple-400 font-semibold">AI-driven personalized learning platform</span> that uses{" "}
+                                  <span className="text-cyan-400 font-semibold">NLP</span> for{" "}
+                                  <span className="text-blue-400 font-semibold">interactive tutoring</span>, along with{" "}
+                                  <span className="text-green-400 font-semibold">adaptive video lectures, notes, and quizzes</span> tailored to student needs
+                                </>
+                              ) : point.includes('AI chatbot') ? (
+                                <>
+                                  Implemented an{" "}
+                                  <span className="text-orange-400 font-semibold">AI chatbot</span> with{" "}
+                                  <span className="text-pink-400 font-semibold">speech Recognition</span>, enabling{" "}
+                                  <span className="text-cyan-400 font-semibold">voice-based interactions</span> and enhancing the{" "}
+                                  <span className="text-yellow-400 font-semibold">learning experience</span>
+                                </>
+                              ) : point.includes('progress tracking') ? (
+                                <>
+                                  Incorporated{" "}
+                                  <span className="text-blue-400 font-semibold">progress tracking</span> and{" "}
+                                  <span className="text-green-400 font-semibold">AI-generated certificates</span>, providing a{" "}
+                                  <span className="text-purple-400 font-semibold">structured learning path</span> and{" "}
+                                  <span className="text-orange-400 font-semibold">personalized achievements</span> for users
+                                </>
+                              ) : point.includes('company website') ? (
+                                <>
+                                  Developed and deployed the{" "}
+                                  <span className="text-blue-400 font-semibold">official company website</span> using{" "}
+                                  <span className="text-cyan-400 font-semibold">HTML, CSS, Bootstrap, and JavaScript</span>, ensuring a{" "}
+                                  <span className="text-green-400 font-semibold">responsive and user-friendly design</span> across devices
+                                </>
+                              ) : point.includes('cross-functional') ? (
+                                <>
+                                  Collaborated with{" "}
+                                  <span className="text-purple-400 font-semibold">cross-functional team</span> to align the{" "}
+                                  <span className="text-orange-400 font-semibold">website's UI</span> with{" "}
+                                  <span className="text-pink-400 font-semibold">branding guidelines</span> and{" "}
+                                  <span className="text-yellow-400 font-semibold">business objectives</span>
+                                </>
+                              ) : point.includes('website performance') ? (
+                                <>
+                                  Enhanced{" "}
+                                  <span className="text-cyan-400 font-semibold">website performance</span> and{" "}
+                                  <span className="text-blue-400 font-semibold">navigation structure</span>, resulting in a{" "}
+                                  <span className="text-green-400 font-semibold">smooth user experience</span> and improved{" "}
+                                  <span className="text-purple-400 font-semibold">accessibility</span>
+                                </>
+                              ) : (
+                                point
+                              )}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
                 
                 {/* Read More Button */}
                 {experience.desc.length > 2 && (
@@ -156,12 +248,12 @@ const Experience = () => {
 
               {/* Technologies Used */}
               <div>
-                <h4 className="text-green-300 text-base font-semibold uppercase tracking-wider mb-3">Technologies Used</h4>
+                <h4 className="text-green-300 text-lg font-semibold uppercase tracking-wider mb-3">Technologies Used</h4>
                 <div className="flex flex-wrap gap-2">
                   {experience.skills.map((skill, index) => (
                     <span
                       key={index}
-                      className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-purple-300 text-sm font-medium px-3 py-2 rounded-full border border-purple-500/30 backdrop-blur-sm hover:from-purple-600/30 hover:to-blue-600/30 transition-all duration-200"
+                      className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-purple-300 text-base font-medium px-3 py-2 rounded-full border border-purple-500/30 backdrop-blur-sm hover:from-purple-600/30 hover:to-blue-600/30 transition-all duration-200"
                     >
                       {skill}
                     </span>

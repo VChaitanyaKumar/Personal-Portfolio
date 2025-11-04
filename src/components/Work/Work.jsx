@@ -4,6 +4,7 @@ import { projects } from "../../constants";
 const Work = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [expandedCards, setExpandedCards] = useState({});
+  const [showAllProjects, setShowAllProjects] = useState(false);
 
   const handleOpenModal = (project) => {
     setSelectedProject(project);
@@ -20,6 +21,12 @@ const Work = () => {
     }));
   };
 
+  const toggleShowAllProjects = () => {
+    setShowAllProjects(prev => !prev);
+  };
+
+  const displayedProjects = showAllProjects ? projects : projects.slice(0, 3);
+
   return (
     <section
       id="work"
@@ -28,17 +35,16 @@ const Work = () => {
 
       {/* Section Title */}
       <div className="text-center mb-16">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white">PROJECTS</h2>
-        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className="text-gray-400 mt-4 text-lg font-semibold">
-          A showcase of the projects I have worked on, highlighting my skills
-          and experience in various technologies
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">PROJECTS</h2>
+        <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto"></div>
+        <p className="text-gray-400 mt-4 text-2xl font-semibold">
+          A showcase of innovative projects demonstrating my expertise in modern web technologies and problem-solving capabilities
         </p>
       </div>
 
       {/* Projects Grid */}
-      <div className="relative grid gap-8 grid-cols-1 lg:grid-cols-2 max-w-7xl mx-auto">
-        {projects.map((project, index) => (
+      <div className="relative grid gap-8 md:gap-12 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 max-w-full mx-auto px-2">
+        {displayedProjects.map((project, index) => (
           <div
             key={project.id}
             className="group relative bg-gradient-to-br from-gray-800/50 via-gray-900/80 to-black/90 backdrop-blur-sm rounded-3xl overflow-hidden hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 border border-gray-700/50 cursor-pointer"
@@ -47,82 +53,102 @@ const Work = () => {
               animationDelay: `${index * 0.1}s`,
             }}
           >
+            {/* Background Elements */}
+            <div className="absolute inset-0 overflow-hidden rounded-3xl">
+              <div className="absolute -top-20 -right-20 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl"></div>
+            </div>
+            
             {/* Gradient Border Effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-green-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
             
             {/* Card Number */}
-            <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
+            <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold z-10">
               {String(index + 1).padStart(2, '0')}
             </div>
 
             {/* Project Content */}
-            <div className="p-8">
+            <div className="relative z-10 p-10">
               {/* Project Title */}
-              <div className="mb-6">
+              <div className="mb-6 text-center">
                 <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-2 leading-tight">
                   {project.title}
                 </h3>
-                <div className="w-12 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-20 transition-all duration-300"></div>
+                <div className="w-12 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto group-hover:w-20 transition-all duration-300"></div>
               </div>
 
               {/* Project Description */}
-              <ul className="text-gray-300 text-sm mb-6 space-y-3">
-                {(expandedCards[project.id] ? project.description : project.description.slice(0, 2)).map((point, index) => (
-                  <li key={index} className="flex items-start text-justify">
-                    <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span className="leading-relaxed">{point}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              {/* Read More Button */}
-              {project.description.length > 2 && (
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleExpanded(project.id);
-                  }}
-                  className="text-purple-400 hover:text-purple-300 text-sm font-medium mb-6 transition-colors duration-200 flex items-center gap-2"
-                >
-                  {expandedCards[project.id] ? (
-                    <>
-                      <span>Show Less</span>
-                      <svg className="w-4 h-4 transform rotate-180" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
-                    </>
-                  ) : (
-                    <>
-                      <span>+{project.description.length - 2} more details</span>
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
-                    </>
-                  )}
-                </button>
-              )}
+              <div className="mb-6">
+                <h4 className="text-cyan-300 text-lg font-semibold uppercase tracking-wider mb-4">Project Overview</h4>
+                <div className="relative">
+                  {/* Timeline Line */}
+                  <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-400 via-purple-500 to-blue-500"></div>
+                  
+                  <div className="space-y-6">
+                    {(expandedCards[project.id] ? project.description : project.description.slice(0, 2)).map((point, index) => (
+                      <div key={index} className="relative flex items-start group">
+                        {/* Timeline Node */}
+                        <div className="absolute left-0 w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
+                          <div className="w-3 h-3 bg-white rounded-full"></div>
+                        </div>
+                        
+                        {/* Content */}
+                        <div className="ml-12 flex-1">
+                          <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 backdrop-blur-sm rounded-xl p-5 border-l-4 border-cyan-400 hover:border-purple-400 transition-all duration-300 shadow-lg hover:shadow-cyan-500/20">
+                            <p className="text-gray-300 leading-relaxed text-lg">
+                              {point}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Read More Button */}
+                {project.description.length > 2 && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleExpanded(project.id);
+                    }}
+                    className="text-purple-400 hover:text-purple-300 text-sm font-medium mt-4 transition-colors duration-200 flex items-center gap-2"
+                  >
+                    {expandedCards[project.id] ? (
+                      <>
+                        <span>Show Less</span>
+                        <svg className="w-4 h-4 transform rotate-180" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </>
+                    ) : (
+                      <>
+                        <span>+{project.description.length - 2} more details</span>
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </>
+                    )}
+                  </button>
+                )}
+              </div>
               
               {/* Technology Tags */}
               <div className="mb-6">
-                <h4 className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-3">Technologies</h4>
+                <h4 className="text-green-300 text-lg font-semibold uppercase tracking-wider mb-3">Technologies Used</h4>
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.slice(0, 4).map((tag, index) => (
+                  {project.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-purple-300 text-xs font-medium px-3 py-2 rounded-full border border-purple-500/30 backdrop-blur-sm hover:from-purple-600/30 hover:to-blue-600/30 transition-all duration-200"
+                      className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-purple-300 text-base font-medium px-3 py-2 rounded-full border border-purple-500/30 backdrop-blur-sm hover:from-purple-600/30 hover:to-blue-600/30 transition-all duration-200"
                     >
                       {tag}
                     </span>
                   ))}
-                  {project.tags.length > 4 && (
-                    <span className="text-purple-300 text-xs font-medium px-3 py-2 bg-gray-700/50 rounded-full">
-                      +{project.tags.length - 4}
-                    </span>
-                  )}
                 </div>
               </div>
               
-              {/* Action Button */}
+              {/* Action Buttons */}
               <div className="flex gap-3">
                 <a
                   href={project.github}
@@ -152,6 +178,32 @@ const Work = () => {
           </div>
         ))}
       </div>
+
+      {/* Read More / Show Less Button */}
+      {projects.length > 3 && (
+        <div className="flex justify-center mt-12">
+          <button
+            onClick={toggleShowAllProjects}
+            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-purple-500/25 hover:scale-105 flex items-center gap-3"
+          >
+            {showAllProjects ? (
+              <>
+                <span>Show Less</span>
+                <svg className="w-5 h-5 transform rotate-180" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </>
+            ) : (
+              <>
+                <span>View More Projects ({projects.length - 3} more)</span>
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </>
+            )}
+          </button>
+        </div>
+      )}
 
       {/* Enhanced Modal Container */}
       {selectedProject && (
@@ -240,6 +292,8 @@ const Work = () => {
           </div>
         </div>
       )}
+
+
     </section>
   );
 };

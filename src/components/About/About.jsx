@@ -6,9 +6,9 @@ const About = () => {
   return (
     <section
       id="about"
-      className="pb-4 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 font-sans"
+      className="pb-4 px-8 sm:px-12 md:px-16 lg:px-56 xl:px-64 font-sans"
     >
-      <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+      <div className="flex flex-col items-center text-center w-full mx-auto">
         {/* About Me Heading */}
         <div className="text-center mb-12 pt-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
@@ -61,7 +61,7 @@ const About = () => {
             />
           </h3>
           {/* About Me Content Card */}
-          <div className="w-full max-w-none mx-auto mt-6 sm:mt-8 mb-6 sm:mb-8 md:mb-10 px-2">
+          <div className="w-full max-w-none mx-auto mt-6 sm:mt-8 mb-6 sm:mb-8 md:mb-10">
             <div className="bg-gradient-to-br from-gray-800/50 via-gray-900/80 to-black/90 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-gray-700/50 shadow-2xl hover:shadow-purple-500/20 transition-all duration-300">
               {/* Background Elements */}
               <div className="absolute inset-0 overflow-hidden rounded-3xl">
@@ -70,7 +70,7 @@ const About = () => {
               </div>
               
               <div className="relative z-10">
-                <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-justify">
+                <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed text-justify">
                   An aspiring <span className="text-purple-400 font-semibold">software engineer</span> with expertise in{" "}
                   <span className="text-blue-400 font-semibold">programming</span> and{" "}
                   <span className="text-green-400 font-semibold">web development</span>. 

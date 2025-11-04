@@ -161,17 +161,16 @@ export const projects = [
   },
   {
     id: 1,
-    title: "PeerUp – University Club Management System",
+    title: "Ocular Disease Recognition Using Deep Learning",
     description: [
-      "Developed a university club management full-stack web application featuring Home, Login, Signup, Student Dashboard, Admin Dashboard, Club Listings, Club Profile, Event Listings, Event Details, Join Requests, and Notifications pages to enhance campus engagement",
-      "Designed and implemented key UI components, including login/signup pages, dashboards, club/event listings, and navigation",
-      "Ensured responsiveness and dynamic content rendering using state management and routing",
-      "Structured and developed MongoDB schemas for users, clubs, events, and notifications with optimized queries using Mongoose",
+      "Implemented transfer learning using the InceptionV3 model to classify retina images into multiple eye disease categories such as Cataract, Glaucoma, and Normal",
+      "Performed data preprocessing and augmentation to enhance model generalization and prevent overfitting on the medical image dataset",
+      "Achieved ~95% classification accuracy, demonstrating effective detection of eye diseases through deep learning techniques",
     ],
-    image: githubdetLogo,
-    tags: ["Angular", "JavaScript", "HTML", "CSS", "MongoDB", "Git"],
+    image: csprepLogo,
+    tags: ["Python", "TensorFlow", "Keras", "OpenCV", "InceptionV3"],
     github:
-      "https://github.com/VChaitanyaKumar/PeerUp_Student_University_Clubs",
+      "https://github.com/VChaitanyaKumar/Ocular_Disease_Recoginition_Using_DeepLearning",
     webapp: "#",
   },
   {
@@ -191,6 +190,34 @@ export const projects = [
   },
   {
     id: 3,
+    title: "PeerUp – University Club Management System",
+    description: [
+      "Developed a university club management full-stack web application featuring Home, Login, Signup, Student Dashboard, Admin Dashboard, Club Listings, Club Profile, Event Listings, Event Details, Join Requests, and Notifications pages to enhance campus engagement",
+      "Designed and implemented key UI components, including login/signup pages, dashboards, club/event listings, and navigation",
+      "Ensured responsiveness and dynamic content rendering using state management and routing",
+      "Structured and developed MongoDB schemas for users, clubs, events, and notifications with optimized queries using Mongoose",
+    ],
+    image: githubdetLogo,
+    tags: ["Angular", "JavaScript", "HTML", "CSS", "MongoDB", "Git"],
+    github:
+      "https://github.com/VChaitanyaKumar/PeerUp_Student_University_Clubs",
+    webapp: "#",
+  },
+  {
+    id: 4,
+    title: "Suvartha Ministries UK – Official Website",
+    description: [
+      "Developed a responsive and modern website for Suvartha Ministries UK to share the Gospel, display ministry services, and engage with visitors through worship, fellowship, and contact sections",
+      "Built key pages and reusable components including Homepage, Last Page, Header, Hero Section, Services, Children's Ministry, Testimonials, Contact Form, and Footer using React and Tailwind CSS with SEO optimization, accessibility, and performance across all devices",
+      "Utilized Next.js App Router for routing and layout management, integrated TypeScript for type safety, and deployed the project on Vercel with source control and collaboration using Git and GitHub"
+    ],
+    image: githubdetLogo,
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Git", "Vercel"],
+    github: "https://github.com/VChaitanyaKumar/Suvarthauk_Website",
+    webapp: "https://suvarthaukwebsite.vercel.app/",
+  },
+  {
+    id: 5,
     title: "Crop And Fertiliser Recommendation System Using ML",
     description: [
       "Built a smart agricultural assistant using machine learning to recommend the best crop and fertilizer based on environmental and soil conditions",
@@ -208,35 +235,6 @@ export const projects = [
     ],
     github:
       "https://github.com/VChaitanyaKumar/Crop_And_Fertiliser_Recommendation_System_Using_ML",
-    webapp: "#",
-  },
-  {
-    id: 4,
-    title: "Cluster Based False Aggregate Detection System (CBFADS) in WSN",
-    description: [
-      "Implemented a hierarchical Wireless Sensor Network (WSN) model with energy-based dynamic cluster head selection and data aggregation to optimize network performance",
-      "Developed an Intrusion Detection System (IDS) at the base station to detect and isolate false data aggregates, improving accuracy and reliability",
-      "Evaluated system performance in NS2 based on Throughput, Delay, Accuracy, and Energy Efficiency",
-      "Achieved superior results compared to LEACH, HEED, PEGASIS, and TEEN protocols",
-    ],
-    image: githubdetLogo,
-    tags: ["NS2", "TCL", "Shell Scripting", "WSN", "Network Security"],
-    github:
-      "https://github.com/VChaitanyaKumar/Cluster-Based-False-Aggregate-Detection-System-in-Wireless-Sensor-Networks-",
-    webapp: "#",
-  },
-  {
-    id: 5,
-    title: "Ocular Disease Recognition Using Deep Learning",
-    description: [
-      "Implemented transfer learning using the InceptionV3 model to classify retina images into multiple eye disease categories such as Cataract, Glaucoma, and Normal",
-      "Performed data preprocessing and augmentation to enhance model generalization and prevent overfitting on the medical image dataset",
-      "Achieved ~95% classification accuracy, demonstrating effective detection of eye diseases through deep learning techniques",
-    ],
-    image: csprepLogo,
-    tags: ["Python", "TensorFlow", "Keras", "OpenCV", "InceptionV3"],
-    github:
-      "https://github.com/VChaitanyaKumar/Ocular_Disease_Recoginition_Using_DeepLearning",
     webapp: "#",
   },
   {
@@ -265,6 +263,21 @@ export const projects = [
     tags: ["Python", "TensorFlow", "Keras", "CNN", "Image Classification"],
     github:
       "https://github.com/VChaitanyaKumar/Forest_Fire_Detection_Using_Deep_Learning",
+    webapp: "#",
+  },
+  {
+    id: 8,
+    title: "Cluster Based False Aggregate Detection System (CBFADS) in WSN",
+    description: [
+      "Implemented a hierarchical Wireless Sensor Network (WSN) model with energy-based dynamic cluster head selection and data aggregation to optimize network performance",
+      "Developed an Intrusion Detection System (IDS) at the base station to detect and isolate false data aggregates, improving accuracy and reliability",
+      "Evaluated system performance in NS2 based on Throughput, Delay, Accuracy, and Energy Efficiency",
+      "Achieved superior results compared to LEACH, HEED, PEGASIS, and TEEN protocols",
+    ],
+    image: githubdetLogo,
+    tags: ["NS2", "TCL", "Shell Scripting", "WSN", "Network Security"],
+    github:
+      "https://github.com/VChaitanyaKumar/Cluster-Based-False-Aggregate-Detection-System-in-Wireless-Sensor-Networks-",
     webapp: "#",
   },
 ];

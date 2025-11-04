@@ -47,9 +47,9 @@ const Navbar = () => {
     >
 
 
-      <div className="relative text-white py-4 flex justify-between items-center max-w-7xl mx-auto">
+      <div className="relative text-white py-6 flex justify-between items-center max-w-7xl mx-auto">
         {/* Logo */}
-        <div className="text-xl font-bold cursor-pointer group">
+        <div className="text-2xl font-bold cursor-pointer group">
           <span className="text-purple-400 group-hover:text-purple-300 transition-colors duration-300">&lt;</span>
           <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent group-hover:from-purple-200 group-hover:to-white transition-all duration-300">
             Portfolio
@@ -63,7 +63,7 @@ const Navbar = () => {
             <li key={item.id}>
               <button
                 onClick={() => handleMenuItemClick(item.id)}
-                className={`relative px-4 py-2 rounded-full text-lg font-medium transition-all duration-300 group ${
+                className={`relative px-6 py-3 rounded-full text-xl font-medium transition-all duration-300 group ${
                   activeSection === item.id 
                     ? "text-white bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg shadow-purple-500/25" 
                     : "text-gray-200 hover:text-white hover:bg-gray-800/50"
@@ -85,15 +85,15 @@ const Navbar = () => {
             href="https://github.com/VChaitanyaKumar"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-10 h-10 bg-gray-800/50 hover:bg-gradient-to-br hover:from-gray-700 hover:to-gray-800 rounded-full flex items-center justify-center text-gray-200 hover:text-white transition-all duration-300 hover:scale-110 border border-gray-700/50 hover:border-gray-600/50"
+            className="w-12 h-12 bg-gray-800/50 hover:bg-gradient-to-br hover:from-gray-700 hover:to-gray-800 rounded-full flex items-center justify-center text-gray-200 hover:text-white transition-all duration-300 hover:scale-110 border border-gray-700/50 hover:border-gray-600/50"
           >
-            <FaGithub size={18} />
+            <FaGithub size={22} />
           </a>
           <a
             href="https://www.linkedin.com/in/v-chaitanya-kumar"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-10 h-10 bg-gray-800/50 hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-700 rounded-full flex items-center justify-center text-gray-200 hover:text-white transition-all duration-300 hover:scale-110 border border-gray-700/50 hover:border-blue-500/50"
+            className="w-12 h-12 bg-gray-800/50 hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-700 rounded-full flex items-center justify-center text-gray-200 hover:text-white transition-all duration-300 hover:scale-110 border border-gray-700/50 hover:border-blue-500/50"
           >
             <FaLinkedin size={18} />
           </a>
