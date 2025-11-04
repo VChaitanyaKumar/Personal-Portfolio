@@ -47,129 +47,130 @@ const Experience = () => {
         </p>
       </div>
 
-      {/* Experience Slider Container */}
-      <div className="relative max-w-5xl mx-auto">
-        {/* Slider Wrapper */}
-        <div className="overflow-hidden rounded-2xl">
-          <div 
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+      {/* Experience Cards - Modern Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 max-w-full mx-auto px-2">
+        {experiences.map((experience, index) => (
+          <div
+            key={experience.id}
+            className="group relative bg-gradient-to-br from-gray-800/50 via-gray-900/80 to-black/90 backdrop-blur-sm rounded-3xl overflow-hidden hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 border border-gray-700/50"
+            style={{
+              animationDelay: `${index * 0.1}s`,
+            }}
           >
-            {experiences.map((experience) => (
-              <div
-                key={experience.id}
-                className="w-full flex-shrink-0 px-2"
-              >
-                <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-300 border border-gray-700">
-                  {/* Company Logo Header */}
-                  <div className="relative bg-gradient-to-r from-purple-600 to-purple-800 p-6 text-center">
-                    <div className="flex flex-col items-center space-y-4">
-                      <div className={`${
-                        experience.company.includes('Lumbini Technologies') 
-                          ? 'w-20 h-20' 
-                          : experience.company.includes('WhiteCloudsMedia')
-                          ? 'w-48 h-20'
-                          : 'w-44 h-20'
-                      } bg-white rounded-lg overflow-hidden shadow-lg`}>
-                        <img
-                          src={experience.img}
-                          alt={experience.company}
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                      <div className="w-full max-w-sm">
-                        <h3 className="text-xl font-bold text-white mb-2">
-                          {experience.role}
-                        </h3>
-                        <p className="text-purple-100 text-base font-medium mb-1 px-2 text-center leading-relaxed">
-                          {experience.company}
-                        </p>
-                        <p className="text-purple-200 text-sm">
-                          {experience.date}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+            {/* Gradient Border Effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-green-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+            
+            {/* Card Number */}
+            <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
+              {String(index + 1).padStart(2, '0')}
+            </div>
 
-                  {/* Content Section */}
-                  <div className="p-6">
-                    {/* Description Points */}
-                    <ul className="text-gray-400 space-y-3 mb-4">
-                      {(expandedCards[experience.id] ? experience.desc : experience.desc.slice(0, 2)).map((point, index) => (
-                        <li key={index} className="flex items-start text-justify">
-                          <span className="text-purple-400 mr-3 mt-1 text-sm">•</span>
-                          <span className="text-sm leading-relaxed">{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    
-                    {/* Read More Button */}
-                    {experience.desc.length > 2 && (
-                      <button
-                        onClick={() => toggleExpanded(experience.id)}
-                        className="text-purple-400 hover:text-purple-300 text-sm font-medium mb-6 transition-colors duration-200"
-                      >
-                        {expandedCards[experience.id] ? 'Read Less' : `+${experience.desc.length - 2} more points...`}
-                      </button>
-                    )}
-
-                    {/* Skills Section */}
-                    <div>
-                      <h5 className="font-semibold text-white mb-3">Technologies Used:</h5>
-                      <div className="flex flex-wrap gap-2">
-                        {experience.skills.map((skill, index) => (
-                          <span
-                            key={index}
-                            className="bg-purple-600/20 text-purple-300 text-xs font-medium px-3 py-1 rounded-full border border-purple-500/30"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+            {/* Experience Content */}
+            <div className="p-10">
+              {/* Company Logo */}
+              <div className="flex justify-center mb-6">
+                <div className={`${
+                  experience.company.includes('Lumbini Technologies') 
+                    ? 'w-24 h-20' 
+                    : experience.company.includes('WhiteCloudsMedia')
+                    ? 'w-52 h-20'
+                    : 'w-48 h-20'
+                } bg-white rounded-2xl overflow-hidden shadow-xl border-4 border-gray-600/30`}>
+                  <img
+                    src={experience.img}
+                    alt={experience.company}
+                    className="w-full h-full object-contain p-2"
+                  />
                 </div>
               </div>
-            ))}
+
+              {/* Role Title */}
+              <div className="mb-6 text-center">
+                <h3 className="text-3xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-2 leading-tight">
+                  {experience.role}
+                </h3>
+                <div className="w-12 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto group-hover:w-20 transition-all duration-300"></div>
+              </div>
+
+              {/* Company Details */}
+              <div className="mb-6 text-center">
+                <div className="text-gray-300 font-medium mb-2 text-2xl">
+                  {experience.company.includes('Lumbini Technologies') ? (
+                    <>
+                      <div className="mb-1">Lumbini Technologies Pvt Ltd</div>
+                      <div>Remote</div>
+                    </>
+                  ) : experience.company.includes('UptoSkills') ? (
+                    <>
+                      <div className="mb-1">UptoSkills</div>
+                      <div>Remote</div>
+                    </>
+                  ) : experience.company.includes('WhiteCloudsMedia') ? (
+                    <>
+                      <div className="mb-1">WhiteCloudsMedia Pvt Ltd</div>
+                      <div>Onsite</div>
+                    </>
+                  ) : (
+                    experience.company
+                  )}
+                </div>
+                <p className="text-gray-400 text-lg">{experience.date}</p>
+              </div>
+
+              {/* Description Points */}
+              <div className="mb-6">
+                <h4 className="text-cyan-300 text-base font-semibold uppercase tracking-wider mb-4">Key Responsibilities</h4>
+                <ul className="text-gray-300 space-y-3">
+                  {(expandedCards[experience.id] ? experience.desc : experience.desc.slice(0, 2)).map((point, index) => (
+                    <li key={index} className="flex items-start text-justify">
+                      <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                      <span className="leading-relaxed text-base">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                {/* Read More Button */}
+                {experience.desc.length > 2 && (
+                  <button
+                    onClick={() => toggleExpanded(experience.id)}
+                    className="text-purple-400 hover:text-purple-300 text-sm font-medium mt-4 transition-colors duration-200 flex items-center gap-2"
+                  >
+                    {expandedCards[experience.id] ? (
+                      <>
+                        <span>Show Less</span>
+                        <svg className="w-4 h-4 transform rotate-180" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </>
+                    ) : (
+                      <>
+                        <span>+{experience.desc.length - 2} more details</span>
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </>
+                    )}
+                  </button>
+                )}
+              </div>
+
+              {/* Technologies Used */}
+              <div>
+                <h4 className="text-green-300 text-base font-semibold uppercase tracking-wider mb-3">Technologies Used</h4>
+                <div className="flex flex-wrap gap-2">
+                  {experience.skills.map((skill, index) => (
+                    <span
+                      key={index}
+                      className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-purple-300 text-sm font-medium px-3 py-2 rounded-full border border-purple-500/30 backdrop-blur-sm hover:from-purple-600/30 hover:to-blue-600/30 transition-all duration-200"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-
-        {/* Navigation Arrows - Outside the cards */}
-        <button
-          onClick={prevSlide}
-          className="absolute -left-16 top-1/2 transform -translate-y-1/2 bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 z-10"
-          aria-label="Previous slide"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-        
-        <button
-          onClick={nextSlide}
-          className="absolute -right-16 top-1/2 transform -translate-y-1/2 bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 z-10"
-          aria-label="Next slide"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-
-        {/* Slide Indicators */}
-        <div className="flex justify-center mt-8 space-x-2">
-          {experiences.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                index === currentSlide 
-                  ? 'bg-purple-500 scale-125' 
-                  : 'bg-gray-600 hover:bg-gray-500'
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
+        ))}
       </div>
     </section>
   );

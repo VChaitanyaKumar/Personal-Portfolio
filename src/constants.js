@@ -70,32 +70,6 @@ export const SkillsInfo = [
 export const experiences = [
   {
     id: 0,
-    img: lumbiniTechnologiesLogo,
-    role: "Web Development Intern",
-    company: "Lumbini Technologies Pvt Ltd – Remote",
-    date: "Oct 2024 - Nov 2024",
-    desc: [
-      "Developed and deployed the official company website using HTML, CSS, Bootstrap, and JavaScript, ensuring a responsive and user-friendly design across devices",
-      "Collaborated with cross-functional team to align the website's UI with branding guidelines and business objectives",
-      "Enhanced website performance and navigation structure, resulting in a smooth user experience and improved accessibility",
-    ],
-    skills: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-  },
-  {
-    id: 1,
-    img: uptoSkillsLogo,
-    role: "Artificial Intelligence Intern",
-    company: "UptoSkills– Remote",
-    date: "Jan 2025 - Apr 2025",
-    desc: [
-      "Developed an AI-driven personalized learning platform that uses NLP for interactive tutoring, along with adaptive video lectures, notes, and quizzes tailored to student needs",
-      "Implemented an AI chatbot with speech Recognition, enabling voice-based interactions and enhancing the learning experience",
-      "Incorporated progress tracking and AI-generated certificates, providing a structured learning path and personalized achievements for users",
-    ],
-    skills: ["Python", "NLP", "AI", "Machine Learning"],
-  },
-  {
-    id: 2,
     img: whiteCloudsMediaLogo,
     role: "Web and App Developer Intern",
     company: "WhiteCloudsMedia Pvt Ltd – Onsite",
@@ -113,6 +87,32 @@ export const experiences = [
       "Tailwind CSS",
     ],
   },
+  {
+    id: 1,
+    img: uptoSkillsLogo,
+    role: "Artificial Intelligence Intern",
+    company: "UptoSkills– Remote",
+    date: "Jan 2025 - Apr 2025",
+    desc: [
+      "Developed an AI-driven personalized learning platform that uses NLP for interactive tutoring, along with adaptive video lectures, notes, and quizzes tailored to student needs",
+      "Implemented an AI chatbot with speech Recognition, enabling voice-based interactions and enhancing the learning experience",
+      "Incorporated progress tracking and AI-generated certificates, providing a structured learning path and personalized achievements for users",
+    ],
+    skills: ["Python", "NLP", "AI", "Machine Learning"],
+  },
+  {
+    id: 2,
+    img: lumbiniTechnologiesLogo,
+    role: "Web Developer Intern",
+    company: "Lumbini Technologies Pvt Ltd – Remote",
+    date: "Oct 2024 - Nov 2024",
+    desc: [
+      "Developed and deployed the official company website using HTML, CSS, Bootstrap, and JavaScript, ensuring a responsive and user-friendly design across devices",
+      "Collaborated with cross-functional team to align the website's UI with branding guidelines and business objectives",
+      "Enhanced website performance and navigation structure, resulting in a smooth user experience and improved accessibility",
+    ],
+    skills: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+  },
 ];
 
 export const education = [
@@ -122,7 +122,7 @@ export const education = [
     school: "Jain University, Bangalore, Karnataka",
     date: "2022 - 2026",
     grade: "90%",
-    desc: "I am currently pursuing my Bachelor of Technology (B.Tech) in Computer Science and Engineering (CSE), where I am developing a strong foundation in both theoretical and practical aspects of computing. My coursework covers key areas such as Data Structures and Algorithms, Operating Systems, Database Management Systems, Computer Networks, Artificial Intelligence, and Web Development.",
+    desc: "I am currently pursuing my Bachelor of Technology (B.Tech) in Computer Science and Engineering (CSE).",
     degree: "B.Tech – Computer Science and Engineering",
   },
   {
@@ -131,7 +131,7 @@ export const education = [
     school: "Narayana Junior College, Nellore, Andhra Pradesh",
     date: "2021 - 2022",
     grade: "93.8%",
-    desc: "I completed my Intermediate (MPC) – Higher Secondary Education from Narayana Junior College, Nellore, where I studied Mathematics, Physics, and Chemistry (MPC).",
+    desc: "I completed my Intermediate (MPC) – Higher Secondary Education from Narayana Junior College, Nellore.",
     degree: "Intermediate( MPC ) – Higher Secondary Education",
   },
   {

@@ -60,14 +60,37 @@ const About = () => {
               )}
             />
           </h3>
-          {/* About Me Paragraph */}
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 mb-6 sm:mb-8 md:mb-10 mt-6 sm:mt-8 leading-relaxed text-justify max-w-3xl mx-auto">
-            An aspiring software engineer with knowledge in programming and web
-            development. Passionate about developing scalable, real-world
-            solutions while continuously enhancing technical and problem-solving
-            skills and seeking a full-time role in a collaborative, agile
-            environment to contribute to innovative software projects.
-          </p>
+          {/* About Me Content Card */}
+          <div className="w-full max-w-none mx-auto mt-6 sm:mt-8 mb-6 sm:mb-8 md:mb-10 px-2">
+            <div className="bg-gradient-to-br from-gray-800/50 via-gray-900/80 to-black/90 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-gray-700/50 shadow-2xl hover:shadow-purple-500/20 transition-all duration-300">
+              {/* Background Elements */}
+              <div className="absolute inset-0 overflow-hidden rounded-3xl">
+                <div className="absolute -top-20 -right-20 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl"></div>
+                <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl"></div>
+              </div>
+              
+              <div className="relative z-10">
+                <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-justify">
+                  An aspiring <span className="text-purple-400 font-semibold">software engineer</span> with expertise in{" "}
+                  <span className="text-blue-400 font-semibold">programming</span> and{" "}
+                  <span className="text-green-400 font-semibold">web development</span>. 
+                  Passionate about developing{" "}
+                  <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent font-semibold">
+                    scalable, real-world solutions
+                  </span>{" "}
+                  while continuously enhancing{" "}
+                  <span className="text-yellow-400 font-semibold">technical</span> and{" "}
+                  <span className="text-pink-400 font-semibold">problem-solving skills</span> and 
+                  seeking a full-time role in a{" "}
+                  <span className="text-cyan-400 font-semibold">collaborative, agile environment</span>{" "}
+                  to contribute to{" "}
+                  <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent font-semibold">
+                    innovative software projects
+                  </span>.
+                </p>
+              </div>
+            </div>
+          </div>
           {/* Resume Button */}
           <a
             href="https://drive.google.com/file/d/1a9WI1Zg9bHUwBz5Xh_Meu6bfh4BT0F_I/view?usp=sharing"

@@ -1,5 +1,13 @@
 import React from "react";
-import { FaLinkedin, FaGithub, FaTwitter, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaGithub,
+  FaTwitter,
+  FaInstagram,
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 
 const Footer = () => {
   // Smooth scroll function
@@ -15,16 +23,18 @@ const Footer = () => {
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
-          
           {/* Left Column - About */}
           <div className="sm:col-span-2 md:col-span-1">
-            <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">V Chaitanya Kumar</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">
+              V Chaitanya Kumar
+            </h3>
             <p className="text-xs sm:text-sm text-gray-300 mb-4 sm:mb-6 leading-relaxed">
-              An aspiring software engineer passionate about developing scalable, 
-              real-world solutions while continuously enhancing technical and 
-              problem-solving skills in web development and AI technologies.
+              An aspiring software engineer passionate about developing
+              scalable, real-world solutions while continuously enhancing
+              technical and problem-solving skills in web development and AI
+              technologies.
             </p>
-            
+
             {/* Social Media Icons */}
             <div className="flex space-x-2 sm:space-x-3">
               <a
@@ -93,16 +103,18 @@ const Footer = () => {
                 <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
                   <FaPhone className="text-white text-sm" />
                 </div>
-                <span className="text-gray-300 text-sm">+91 9876543210</span>
+                <span className="text-gray-300 text-sm">+91 9391325081</span>
               </div>
-              
+
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
                   <FaEnvelope className="text-white text-sm" />
                 </div>
-                <span className="text-gray-300 text-sm">vchaitanyakumar@gmail.com</span>
+                <span className="text-gray-300 text-sm">
+                  vanamachaitanya246@gmail.com
+                </span>
               </div>
-              
+
               <div className="flex items-start space-x-3">
                 <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center mt-1">
                   <FaMapMarkerAlt className="text-white text-sm" />
