@@ -6,14 +6,21 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-4 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 font-sans mt-12 sm:mt-16 md:mt-24 lg:mt-32"
+      className="pb-4 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 font-sans"
     >
       <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+        {/* About Me Heading */}
+        <div className="text-center mb-12 pt-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
+            About Me
+          </h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto"></div>
+        </div>
+
         {/* Profile Photo - Centered at Top */}
         <div className="mb-8 md:mb-12">
           <Tilt
-            className="w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 border-4 border-purple-700 rounded-full"
-            style={{ backgroundColor: "#ffffff" }}
+            className="w-48 h-60 sm:w-56 sm:h-72 md:w-72 md:h-96 lg:w-80 lg:h-[26rem] border-4 border-purple-700 rounded-2xl overflow-hidden"
             tiltMaxAngleX={20}
             tiltMaxAngleY={20}
             perspective={1000}
@@ -24,7 +31,7 @@ const About = () => {
             <img
               src={profileImage}
               alt="V Chaitanya Kumar"
-              className="w-full h-full object-contain rounded-full drop-shadow-[0_10px_20px_rgba(130,69,236,0.5)]"
+              className="w-full h-full object-cover rounded-2xl drop-shadow-[0_10px_20px_rgba(130,69,236,0.5)]"
             />
           </Tilt>
         </div>
@@ -32,7 +39,7 @@ const About = () => {
         {/* Content - Centered Below Photo */}
         <div className="w-full text-center">
           {/* Greeting and Name */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 leading-tight">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 leading-tight">
             Hi, <span className="whitespace-nowrap">V Chaitanya Kumar</span>
           </h1>
           {/* Skills Heading with Typing Effect */}

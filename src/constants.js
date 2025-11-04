@@ -157,7 +157,7 @@ export const projects = [
     image: githubdetLogo,
     tags: ["React", "Tailwind CSS", "Git", "GitHub", "Supabase", "PostgreSQL"],
     github: "https://github.com/abhilash-hijblr/hijblr-app",
-    webapp: "#",
+    webapp: "https://hijblr.com/home",
   },
   {
     id: 1,

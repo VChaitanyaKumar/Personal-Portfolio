@@ -39,7 +39,7 @@ const Skills = () => (
                 </h3>
 
                 {/* Skill Items */}
-                <div className="grid grid-cols-1 gap-2 sm:gap-3">
+                <div className="grid grid-cols-1 gap-1 sm:gap-2">
                   {category.skills.map((skill) => (
                     <div
                       key={skill.name}
