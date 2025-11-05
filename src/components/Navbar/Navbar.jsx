@@ -41,20 +41,23 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-500 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 ${
         isScrolled 
-          ? "bg-black/95 backdrop-blur-xl shadow-2xl border-b border-gray-800/50" 
-          : "bg-black/90 backdrop-blur-sm"
+          ? "bg-slate-900/95 backdrop-blur-xl shadow-2xl border-b border-gray-800/50" 
+          : "bg-slate-900/90 backdrop-blur-sm"
       }`}
     >
 
 
       <div className="relative text-white py-6 flex justify-between items-center max-w-7xl mx-auto">
         {/* Logo */}
-        <div className="text-2xl font-bold cursor-pointer group">
-          <span className="text-purple-400 group-hover:text-purple-300 transition-colors duration-300">&lt;</span>
-          <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent group-hover:from-purple-200 group-hover:to-white transition-all duration-300">
-            Portfolio
+        <div className="flex items-center space-x-3 cursor-pointer group">
+          {/* Circular Logo */}
+          <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center group-hover:from-purple-400 group-hover:to-purple-500 transition-all duration-300">
+            <span className="text-white font-bold text-lg">VK</span>
+          </div>
+          {/* Name */}
+          <span className="text-white font-semibold text-xl group-hover:text-gray-200 transition-colors duration-300">
+            V Chaitanya Kumar
           </span>
-          <span className="text-purple-400 group-hover:text-purple-300 transition-colors duration-300">/&gt;</span>
         </div>
 
         {/* Desktop Menu */}
@@ -80,22 +83,22 @@ const Navbar = () => {
         </ul>
 
         {/* Social Icons */}
-        <div className="hidden md:flex space-x-3">
+        <div className="hidden md:flex space-x-4">
           <a
             href="https://github.com/VChaitanyaKumar"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-12 h-12 bg-gray-800/50 hover:bg-gradient-to-br hover:from-gray-700 hover:to-gray-800 rounded-full flex items-center justify-center text-gray-200 hover:text-white transition-all duration-300 hover:scale-110 border border-gray-700/50 hover:border-gray-600/50"
+            className="w-14 h-14 bg-gray-800/50 hover:bg-gradient-to-br hover:from-gray-700 hover:to-gray-800 rounded-full flex items-center justify-center text-gray-200 hover:text-white transition-all duration-300 hover:scale-110 border border-gray-700/50 hover:border-gray-600/50"
           >
-            <FaGithub size={22} />
+            <FaGithub size={26} />
           </a>
           <a
             href="https://www.linkedin.com/in/v-chaitanya-kumar"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-12 h-12 bg-gray-800/50 hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-700 rounded-full flex items-center justify-center text-gray-200 hover:text-white transition-all duration-300 hover:scale-110 border border-gray-700/50 hover:border-blue-500/50"
+            className="w-14 h-14 bg-gray-800/50 hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-700 rounded-full flex items-center justify-center text-gray-200 hover:text-white transition-all duration-300 hover:scale-110 border border-gray-700/50 hover:border-blue-500/50"
           >
-            <FaLinkedin size={18} />
+            <FaLinkedin size={22} />
           </a>
         </div>
 
@@ -147,17 +150,17 @@ const Navbar = () => {
                 href="https://github.com/VChaitanyaKumar"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-gray-800/50 hover:bg-gradient-to-br hover:from-gray-700 hover:to-gray-800 rounded-full flex items-center justify-center text-gray-200 hover:text-white transition-all duration-300 hover:scale-110 border border-gray-700/50"
+                className="w-14 h-14 bg-gray-800/50 hover:bg-gradient-to-br hover:from-gray-700 hover:to-gray-800 rounded-full flex items-center justify-center text-gray-200 hover:text-white transition-all duration-300 hover:scale-110 border border-gray-700/50"
               >
-                <FaGithub size={20} />
+                <FaGithub size={24} />
               </a>
               <a
                 href="https://www.linkedin.com/in/v-chaitanya-kumar"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-gray-800/50 hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-700 rounded-full flex items-center justify-center text-gray-200 hover:text-white transition-all duration-300 hover:scale-110 border border-gray-700/50"
+                className="w-14 h-14 bg-gray-800/50 hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-700 rounded-full flex items-center justify-center text-gray-200 hover:text-white transition-all duration-300 hover:scale-110 border border-gray-700/50"
               >
-                <FaLinkedin size={20} />
+                <FaLinkedin size={24} />
               </a>
             </div>
           </div>

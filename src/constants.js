@@ -8,9 +8,11 @@ import tailwindcssLogo from "./assets/tech_logo/tailwindcss.png";
 import bootstrapLogo from "./assets/tech_logo/bootstrap.png";
 import nodejsLogo from "./assets/tech_logo/nodejs.png";
 import expressjsLogo from "./assets/tech_logo/express.png";
+import supabaseLogo from "./assets/tech_logo/supabase.png";
 import mysqlLogo from "./assets/tech_logo/mysql.png";
 import mongodbLogo from "./assets/tech_logo/mongodb.png";
 import cLogo from "./assets/tech_logo/c.png";
+import cppLogo from "./assets/tech_logo/cpp.png";
 import javaLogo from "./assets/tech_logo/java.png";
 import pythonLogo from "./assets/tech_logo/python.png";
 import gitLogo from "./assets/tech_logo/git.png";
@@ -39,6 +41,7 @@ export const SkillsInfo = [
       { name: "Java", logo: javaLogo },
       { name: "Python", logo: pythonLogo },
       { name: "C", logo: cLogo },
+      { name: "C++", logo: cppLogo },
     ],
   },
   {
@@ -53,6 +56,7 @@ export const SkillsInfo = [
       { name: "Angular", logo: angularLogo },
       { name: "Node JS", logo: nodejsLogo },
       { name: "Express JS", logo: expressjsLogo },
+      { name: "Supabase", logo: supabaseLogo },
     ],
   },
   {

@@ -68,25 +68,42 @@ const About = () => {
                 <div className="absolute -top-20 -right-20 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl"></div>
                 <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl"></div>
               </div>
-              
+
               <div className="relative z-10">
                 <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed text-justify">
-                  An aspiring <span className="text-purple-400 font-semibold">software engineer</span> with expertise in{" "}
-                  <span className="text-blue-400 font-semibold">programming</span> and{" "}
-                  <span className="text-green-400 font-semibold">web development</span>. 
-                  Passionate about developing{" "}
+                  An aspiring{" "}
+                  <span className="text-purple-400 font-semibold">
+                    software engineer
+                  </span>{" "}
+                  with expertise in{" "}
+                  <span className="text-blue-400 font-semibold">
+                    programming
+                  </span>{" "}
+                  and{" "}
+                  <span className="text-green-400 font-semibold">
+                    web development
+                  </span>
+                  . Passionate about developing{" "}
                   <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent font-semibold">
                     scalable, real-world solutions
                   </span>{" "}
                   while continuously enhancing{" "}
-                  <span className="text-yellow-400 font-semibold">technical</span> and{" "}
-                  <span className="text-pink-400 font-semibold">problem-solving skills</span> and 
-                  seeking a full-time role in a{" "}
-                  <span className="text-cyan-400 font-semibold">collaborative, agile environment</span>{" "}
+                  <span className="text-yellow-400 font-semibold">
+                    technical
+                  </span>{" "}
+                  and{" "}
+                  <span className="text-pink-400 font-semibold">
+                    problem-solving skills
+                  </span>{" "}
+                  and seeking a full-time role in a{" "}
+                  <span className="text-cyan-400 font-semibold">
+                    collaborative, agile environment
+                  </span>{" "}
                   to contribute to{" "}
                   <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent font-semibold">
                     innovative software projects
-                  </span>.
+                  </span>
+                  .
                 </p>
               </div>
             </div>
@@ -96,7 +113,7 @@ const About = () => {
             href="https://drive.google.com/file/d/1a9WI1Zg9bHUwBz5Xh_Meu6bfh4BT0F_I/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block text-white py-2 px-6 sm:py-3 sm:px-8 rounded-full mt-4 sm:mt-5 text-base sm:text-lg font-bold transition duration-300 transform hover:scale-105"
+            className="inline-block text-white py-4 px-12 sm:py-5 sm:px-16 md:py-6 md:px-20 rounded-full mt-6 sm:mt-8 text-lg sm:text-xl md:text-2xl font-bold transition duration-300 transform hover:scale-105"
             style={{
               background: "linear-gradient(90deg, #8245ec, #a855f7)",
               boxShadow: "0 0 2px #8245ec, 0 0 2px #8245ec, 0 0 40px #8245ec",
