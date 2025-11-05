@@ -1,7 +1,7 @@
 
 ## 🚀 Live Demo
 
-🔗 [View Portfolio Live] (https://personal-portfolio-eight-rho-10.vercel.app/)
+🔗 [View Portfolio Live] (https://chaitanya-portfolio-taupe.vercel.app/)
 
 ## 🛠️ Tech Stack
 
