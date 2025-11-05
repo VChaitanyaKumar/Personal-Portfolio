@@ -1,6 +1,78 @@
 import React, { useState } from "react";
 import { projects } from "../../constants";
 
+// Helper function to colorize text
+const colorizeText = (text) => {
+  const techColors = {
+    // Frontend
+    'React': 'text-blue-400',
+    'Next.js': 'text-blue-400',
+    'Vue.js': 'text-blue-400',
+    'Angular': 'text-blue-400',
+    'HTML': 'text-blue-400',
+    'CSS': 'text-blue-400',
+    'JavaScript': 'text-blue-400',
+    'TypeScript': 'text-blue-400',
+    'Tailwind': 'text-blue-400',
+    'Bootstrap': 'text-blue-400',
+    
+    // Backend
+    'Node.js': 'text-green-400',
+    'Express': 'text-green-400',
+    'Django': 'text-green-400',
+    'Flask': 'text-green-400',
+    'PHP': 'text-green-400',
+    'Laravel': 'text-green-400',
+    'Spring': 'text-green-400',
+    'ASP.NET': 'text-green-400',
+    
+    // Databases
+    'MongoDB': 'text-orange-400',
+    'MySQL': 'text-orange-400',
+    'PostgreSQL': 'text-orange-400',
+    'Firebase': 'text-orange-400',
+    'Supabase': 'text-orange-400',
+    'Redis': 'text-orange-400',
+    'SQLite': 'text-orange-400',
+    
+    // Mobile
+    'React-Native': 'text-purple-400',
+    'Flutter': 'text-purple-400',
+    'Ionic': 'text-purple-400',
+    'Android': 'text-purple-400',
+    'iOS': 'text-purple-400',
+    
+    // Cloud & DevOps
+    'AWS': 'text-cyan-400',
+    'Azure': 'text-cyan-400',
+    'Docker': 'text-cyan-400',
+    'GitHub': 'text-cyan-400',
+    'Vercel': 'text-cyan-400',
+    'Netlify': 'text-cyan-400',
+    
+    // AI/ML
+    'AI': 'text-pink-400',
+    'ML': 'text-pink-400',
+    'OpenAI': 'text-pink-400',
+    'GPT': 'text-pink-400',
+    
+    // Tools
+    'API': 'text-yellow-400',
+    'REST': 'text-yellow-400',
+    'GraphQL': 'text-yellow-400',
+    'JWT': 'text-yellow-400',
+    'CRUD': 'text-yellow-400'
+  };
+  
+  let coloredText = text;
+  Object.entries(techColors).forEach(([tech, color]) => {
+    const regex = new RegExp(`\\b${tech}\\b`, 'gi');
+    coloredText = coloredText.replace(regex, `<span class="${color} font-semibold">${tech}</span>`);
+  });
+  
+  return coloredText;
+};
+
 const Work = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [expandedCards, setExpandedCards] = useState({});
@@ -30,24 +102,24 @@ const Work = () => {
   return (
     <section
       id="work"
-      className="py-12 sm:py-16 md:py-20 lg:py-24 pb-12 sm:pb-16 md:pb-20 lg:pb-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 font-sans relative bg-skills-gradient clip-path-custom"
+      className="py-12 sm:py-16 md:py-20 lg:py-24 pb-12 sm:pb-16 md:pb-20 lg:pb-24 px-0 font-sans relative bg-skills-gradient clip-path-custom"
     >
 
       {/* Section Title */}
       <div className="text-center mb-16">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">PROJECTS</h2>
         <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto"></div>
-        <p className="text-gray-400 mt-4 text-2xl font-semibold">
+        <p className="text-gray-400 mt-4 text-lg sm:text-xl md:text-2xl font-semibold">
           A showcase of innovative projects demonstrating my expertise in modern web technologies and problem-solving capabilities
         </p>
       </div>
 
       {/* Projects Grid */}
-      <div className="relative grid gap-8 md:gap-12 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 max-w-full mx-auto px-2">
+      <div className="relative grid gap-8 md:gap-12 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-full mx-auto px-0">
         {displayedProjects.map((project, index) => (
           <div
             key={project.id}
-            className="group relative bg-gradient-to-br from-gray-800/50 via-gray-900/80 to-black/90 backdrop-blur-sm rounded-3xl overflow-hidden hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 border border-gray-700/50 cursor-pointer"
+            className="group relative bg-gradient-to-br from-gray-800/50 via-gray-900/80 to-black/90 backdrop-blur-sm rounded-3xl overflow-hidden hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 border-2 border-gray-600/70 shadow-lg shadow-gray-900/50 cursor-pointer"
             onClick={() => handleOpenModal(project)}
             style={{
               animationDelay: `${index * 0.1}s`,
@@ -60,7 +132,10 @@ const Work = () => {
             </div>
             
             {/* Gradient Border Effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-green-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 via-blue-500/30 to-green-500/30 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+            
+            {/* Outer Glow Effect */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-cyan-600/20 rounded-3xl blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-500 -z-20"></div>
             
             {/* Card Number */}
             <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold z-10">
@@ -71,7 +146,7 @@ const Work = () => {
             <div className="relative z-10 p-10">
               {/* Project Title */}
               <div className="mb-6 text-center">
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-2 leading-tight">
+                <h3 className="text-lg font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-2 leading-tight">
                   {project.title}
                 </h3>
                 <div className="w-12 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto group-hover:w-20 transition-all duration-300"></div>
@@ -79,25 +154,23 @@ const Work = () => {
 
               {/* Project Description */}
               <div className="mb-6">
-                <h4 className="text-cyan-300 text-lg font-semibold uppercase tracking-wider mb-4">Project Overview</h4>
+                <h4 className="text-cyan-300 text-sm font-semibold uppercase tracking-wider mb-4">Project Overview</h4>
                 <div className="relative">
                   {/* Timeline Line */}
-                  <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-400 via-purple-500 to-blue-500"></div>
+                  <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-400 via-purple-500 to-blue-500 hidden sm:block"></div>
                   
                   <div className="space-y-6">
                     {(expandedCards[project.id] ? project.description : project.description.slice(0, 2)).map((point, index) => (
                       <div key={index} className="relative flex items-start group">
-                        {/* Timeline Node */}
-                        <div className="absolute left-0 w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
-                          <div className="w-3 h-3 bg-white rounded-full"></div>
-                        </div>
+
                         
                         {/* Content */}
-                        <div className="ml-12 flex-1">
+                        <div className="ml-0 flex-1">
                           <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 backdrop-blur-sm rounded-xl p-5 border-l-4 border-cyan-400 hover:border-purple-400 transition-all duration-300 shadow-lg hover:shadow-cyan-500/20">
-                            <p className="text-gray-300 leading-relaxed text-lg">
-                              {point}
-                            </p>
+                            <div 
+                              className="text-gray-300 leading-relaxed text-sm"
+                              dangerouslySetInnerHTML={{ __html: colorizeText(point) }}
+                            />
                           </div>
                         </div>
                       </div>
@@ -135,12 +208,12 @@ const Work = () => {
               
               {/* Technology Tags */}
               <div className="mb-6">
-                <h4 className="text-green-300 text-lg font-semibold uppercase tracking-wider mb-3">Technologies Used</h4>
+                <h4 className="text-green-300 text-sm font-semibold uppercase tracking-wider mb-3">Technologies Used</h4>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-purple-300 text-base font-medium px-3 py-2 rounded-full border border-purple-500/30 backdrop-blur-sm hover:from-purple-600/30 hover:to-blue-600/30 transition-all duration-200"
+                      className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-purple-300 text-xs font-medium px-2 py-1 rounded-full border border-purple-500/30 backdrop-blur-sm hover:from-purple-600/30 hover:to-blue-600/30 transition-all duration-200"
                     >
                       {tag}
                     </span>
