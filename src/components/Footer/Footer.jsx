@@ -70,8 +70,8 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links - Moved to Right */}
-          <div className="text-left md:text-right">
+          {/* Quick Links - Center Aligned */}
+          <div className="text-left lg:text-center">
             <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-6 md:mb-8">Quick Links</h3>
             <nav className="space-y-2 sm:space-y-3 md:space-y-4">
               {[
@@ -85,7 +85,7 @@ const Footer = () => {
                 <button
                   key={index}
                   onClick={() => handleScroll(item.id)}
-                  className="block w-full text-left md:text-right text-gray-300 hover:text-white text-sm sm:text-base md:text-lg lg:text-xl font-medium transition-colors duration-200"
+                  className="block w-full text-left lg:text-center text-gray-300 hover:text-white text-sm sm:text-base md:text-lg lg:text-xl font-medium transition-colors duration-200"
                 >
                   {item.name}
                 </button>
@@ -127,21 +127,22 @@ const Footer = () => {
 
       {/* Bottom Footer */}
       <div className="border-t border-gray-700 pt-4 sm:pt-6 md:pt-8 px-4 sm:px-8 md:px-16 lg:px-32">
-          {/* Copyright Text - Centered */}
-          <div className="text-center mb-4 sm:mb-6">
+          {/* Copyright and Policies - One Line */}
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            {/* Copyright Text - Left Side */}
             <p className="text-gray-400 text-xs sm:text-sm md:text-base lg:text-lg">
               © 2025 V Chaitanya Kumar. All rights reserved.
             </p>
-          </div>
-          
-          {/* Privacy Policy and Terms - Centered with space between */}
-          <div className="flex justify-center items-center gap-8 sm:gap-12 md:gap-16 lg:gap-20">
-            <button className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm md:text-base lg:text-lg">
-              Privacy Policy
-            </button>
-            <button className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm md:text-base lg:text-lg">
-              Terms of Service
-            </button>
+            
+            {/* Privacy Policy and Terms - Right Side */}
+            <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
+              <button className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm md:text-base lg:text-lg">
+                Privacy Policy
+              </button>
+              <button className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm md:text-base lg:text-lg">
+                Terms of Service
+              </button>
+            </div>
           </div>
       </div>
     </footer>
