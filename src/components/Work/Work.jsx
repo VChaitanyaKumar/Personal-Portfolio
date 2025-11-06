@@ -119,7 +119,7 @@ const Work = () => {
         {displayedProjects.map((project, index) => (
           <div
             key={project.id}
-            className="group relative bg-gradient-to-br from-gray-800/50 via-gray-900/80 to-black/90 backdrop-blur-sm rounded-3xl overflow-hidden hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 border-2 border-gray-600/70 shadow-lg shadow-gray-900/50 cursor-pointer"
+            className="group relative bg-gray-900/95 backdrop-blur-sm rounded-3xl overflow-hidden hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 border-2 border-gray-600/70 shadow-lg shadow-gray-900/50 cursor-pointer"
             onClick={() => handleOpenModal(project)}
             style={{
               animationDelay: `${index * 0.1}s`,
@@ -146,7 +146,7 @@ const Work = () => {
             <div className="relative z-10 p-10">
               {/* Project Title */}
               <div className="mb-6 text-center">
-                <h3 className="text-lg font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-2 leading-tight">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-2 leading-tight">
                   {project.title}
                 </h3>
                 <div className="w-12 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto group-hover:w-20 transition-all duration-300"></div>
@@ -154,7 +154,7 @@ const Work = () => {
 
               {/* Project Description */}
               <div className="mb-6">
-                <h4 className="text-cyan-300 text-sm font-semibold uppercase tracking-wider mb-4">Project Overview</h4>
+                <h4 className="text-cyan-300 text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider mb-4">Project Overview</h4>
                 <div className="relative">
                   {/* Timeline Line */}
                   <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-400 via-purple-500 to-blue-500 hidden sm:block"></div>
@@ -168,7 +168,7 @@ const Work = () => {
                         <div className="ml-0 flex-1">
                           <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 backdrop-blur-sm rounded-xl p-5 border-l-4 border-cyan-400 hover:border-purple-400 transition-all duration-300 shadow-lg hover:shadow-cyan-500/20">
                             <div 
-                              className="text-gray-300 leading-relaxed text-sm"
+                              className="text-gray-300 leading-relaxed text-sm sm:text-base md:text-lg"
                               dangerouslySetInnerHTML={{ __html: colorizeText(point) }}
                             />
                           </div>
@@ -208,12 +208,12 @@ const Work = () => {
               
               {/* Technology Tags */}
               <div className="mb-6">
-                <h4 className="text-green-300 text-sm font-semibold uppercase tracking-wider mb-3">Technologies Used</h4>
+                <h4 className="text-green-300 text-base sm:text-lg md:text-xl font-semibold uppercase tracking-wider mb-3">Technologies Used</h4>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-purple-300 text-xs font-medium px-2 py-1 rounded-full border border-purple-500/30 backdrop-blur-sm hover:from-purple-600/30 hover:to-blue-600/30 transition-all duration-200"
+                      className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-purple-300 text-sm sm:text-base md:text-lg font-medium px-2 py-1 rounded-full border border-purple-500/30 backdrop-blur-sm hover:from-purple-600/30 hover:to-blue-600/30 transition-all duration-200"
                     >
                       {tag}
                     </span>

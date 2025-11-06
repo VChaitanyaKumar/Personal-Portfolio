@@ -20,9 +20,9 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-[#0a0a0f] to-[#1a1a2e] text-white py-8 sm:py-12 md:py-16 border-t border-gray-800">
       {/* Main Footer Content */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 sm:mb-12 md:mb-16 px-4 sm:px-8 md:px-16 lg:px-32">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 sm:mb-12 md:mb-16 px-4 sm:px-8 md:px-16 lg:px-32">
           {/* Left Column - About */}
-          <div className="text-left">
+          <div className="text-left md:col-span-2">
             <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-6 md:mb-8">
               V Chaitanya Kumar
             </h3>
@@ -70,8 +70,8 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Middle Column - Quick Links */}
-          <div className="text-left">
+          {/* Quick Links - Moved to Right */}
+          <div className="text-left md:text-right">
             <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-6 md:mb-8">Quick Links</h3>
             <nav className="space-y-2 sm:space-y-3 md:space-y-4">
               {[
@@ -85,7 +85,7 @@ const Footer = () => {
                 <button
                   key={index}
                   onClick={() => handleScroll(item.id)}
-                  className="block w-full text-left text-gray-300 hover:text-white text-sm sm:text-base md:text-lg lg:text-xl font-medium transition-colors duration-200"
+                  className="block w-full text-left md:text-right text-gray-300 hover:text-white text-sm sm:text-base md:text-lg lg:text-xl font-medium transition-colors duration-200"
                 >
                   {item.name}
                 </button>

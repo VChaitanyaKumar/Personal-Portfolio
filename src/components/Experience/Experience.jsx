@@ -56,7 +56,7 @@ const Experience = () => {
         {experiences.map((experience, index) => (
           <div
             key={experience.id}
-            className="group relative bg-gradient-to-br from-gray-800/50 via-gray-900/80 to-black/90 backdrop-blur-sm rounded-3xl overflow-hidden hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 border-2 border-gray-600/70 shadow-lg shadow-gray-900/50"
+            className="group relative bg-gray-900/95 backdrop-blur-sm rounded-3xl overflow-hidden hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 border-2 border-gray-600/70 shadow-lg shadow-gray-900/50"
             style={{
               animationDelay: `${index * 0.1}s`,
             }}
@@ -88,14 +88,14 @@ const Experience = () => {
                   <img
                     src={experience.img}
                     alt={experience.company}
-                    className="w-full h-full object-contain p-2"
+                    className="w-full h-full object-fill"
                   />
                 </div>
               </div>
 
               {/* Role Title */}
               <div className="mb-6 text-center">
-                <h3 className="text-base sm:text-lg font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-2 leading-tight">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-2 leading-tight">
                   {experience.role}
                 </h3>
                 <div className="w-12 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto group-hover:w-20 transition-all duration-300"></div>
@@ -103,7 +103,7 @@ const Experience = () => {
 
               {/* Company Details */}
               <div className="mb-6 text-center">
-                <div className="text-gray-300 font-medium mb-2 text-sm sm:text-base">
+                <div className="text-gray-300 font-medium mb-2 text-base sm:text-lg md:text-xl">
                   {experience.company.includes("Lumbini Technologies") ? (
                     <>
                       <div className="mb-1">Lumbini Technologies Pvt Ltd</div>
@@ -123,14 +123,14 @@ const Experience = () => {
                     experience.company
                   )}
                 </div>
-                <p className="text-gray-400 text-xs sm:text-sm">
+                <p className="text-gray-400 text-sm sm:text-base md:text-lg">
                   {experience.date}
                 </p>
               </div>
 
               {/* Description Points */}
               <div className="mb-6">
-                <h4 className="text-cyan-300 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4">
+                <h4 className="text-cyan-300 text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider mb-4">
                   Key Responsibilities
                 </h4>
                 <div className="relative">
@@ -149,7 +149,7 @@ const Experience = () => {
                         {/* Content */}
                         <div className="ml-0 flex-1">
                           <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 backdrop-blur-sm rounded-xl p-5 border-l-4 border-cyan-400 hover:border-purple-400 transition-all duration-300 shadow-lg hover:shadow-cyan-500/20">
-                            <p className="text-gray-300 leading-relaxed text-xs sm:text-sm">
+                            <p className="text-gray-300 leading-relaxed text-sm sm:text-base md:text-lg">
                               {point.includes("React Native") ? (
                                 <>
                                   Developed a cross-platform{" "}
@@ -386,14 +386,14 @@ const Experience = () => {
 
               {/* Technologies Used */}
               <div>
-                <h4 className="text-green-300 text-sm sm:text-lg font-semibold uppercase tracking-wider mb-3">
+                <h4 className="text-green-300 text-base sm:text-lg md:text-xl font-semibold uppercase tracking-wider mb-3">
                   Technologies Used
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {experience.skills.map((skill, index) => (
                     <span
                       key={index}
-                      className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-purple-300 text-xs sm:text-base font-medium px-3 py-2 rounded-full border border-purple-500/30 backdrop-blur-sm hover:from-purple-600/30 hover:to-blue-600/30 transition-all duration-200"
+                      className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-purple-300 text-sm sm:text-base md:text-lg font-medium px-3 py-2 rounded-full border border-purple-500/30 backdrop-blur-sm hover:from-purple-600/30 hover:to-blue-600/30 transition-all duration-200"
                     >
                       {skill}
                     </span>
